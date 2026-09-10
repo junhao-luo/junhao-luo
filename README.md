@@ -1,6 +1,6 @@
 ### Hi there 👋, Welcome!
 
-![Banner Placeholder](https://via.placeholder.com/800x200/151515/FFFFFF?text=Your+Banner+Image+Here)
+[![Eljhon-Steve-(1).png](https://i.postimg.cc/sgC0rV3J/Eljhon-Steve-(1).png)](https://postimg.cc/7fXN1rGC)
 
 Hello! 👋 My name is **Ejhon**. I am from Feng Chia University taking the Bachelor's Program of Artificial Intelligence Technology and Application. 🏫
 
