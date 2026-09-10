@@ -21,7 +21,7 @@ AI Automation | Video Editing | Graphic Design | Virtual Assistance
 
 *   🔭 I’m currently working on my **Personal Portfolio Website**
 *   🌱 I’m currently learning **Python**
-*   📫 How to reach me: [**LinkedIn**](#) | [**Instagram**](#) | [**Facebook**](#)
+*   📫 How to reach me: [**LinkedIn**](https://www.linkedin.com/in/eljhon-satsat/) | [**Instagram**](https://www.instagram.com/st_tib/) | [**Facebook**]([#](https://www.facebook.com/eljhon.satsat.2025))
 *   😄 Pronouns: **he/him**
 *   ⚡ Fun fact: **I can speak 4 languages (including Mandarin)**
 
