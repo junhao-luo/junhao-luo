@@ -1,29 +1,35 @@
-### Hi there 👋, Welcome!
+### `> system.init("Ejhon")` 👋
 
 [![Eljhon-Steve-(1).png](https://i.postimg.cc/sgC0rV3J/Eljhon-Steve-(1).png)](https://postimg.cc/7fXN1rGC)
 
-Hello! 👋 My name is **Ejhon**. I am from Feng Chia University taking the Bachelor's Program of Artificial Intelligence Technology and Application. 🏫
+**`[USER_PROFILE]`**
+Hello! I'm **Ejhon**. I am an automation architect and student at **Feng Chia University** in Taiwan, currently executing my Bachelor's Program of **Artificial Intelligence Technology and Application**. 🏫
 
-I have a huge interest in AI Automation 🤖, but I also dabble in video editing 🎬 and graphic design 🎨! I am currently working as a Freelance Virtual Assistant.
+🎓 **Degree Checkpoint:**
+`> Model Training Progress: Epoch 1/8 [█░░░░░░░] 12.5% | loss: optimizing...`
 
-**Skills:**
+My core processing power goes toward **AI Automation** 🤖 and building agentic workflows, but my neural network is multimodal—I also output creative deliverables through **video editing** 🎬 and **graphic design** 🎨. I'm currently deploying these modules as a Freelance Virtual Assistant.
+
+**`[CORE_MODULES]`**
 AI Automation | Video Editing | Graphic Design | Virtual Assistance
 
-**Tools:**
+**`[TECH_STACK]`**
 <p align="left">
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
   <img src="https://img.shields.io/badge/n8n-FF6D5A?style=for-the-badge&logo=n8n&logoColor=white" alt="n8n"/>
-  <img src="https://img.shields.io/badge/ChatGPT-74aa9c?style=for-the-badge&logo=openai&logoColor=white" alt="ChatGPT"/>
-  <img src="https://img.shields.io/badge/Canva-%2300C4CC.svg?style=for-the-badge&logo=Canva&logoColor=white" alt="Canva"/>
-  <img src="https://img.shields.io/badge/Adobe%20Photoshop-31A8FF?style=for-the-badge&logo=Adobe%20Photoshop&logoColor=black" alt="Photoshop"/>
-  <img src="https://img.shields.io/badge/DaVinci_Resolve-db5a6b?style=for-the-badge&logo=davinciresolve&logoColor=white" alt="DaVinci Resolve"/>
+  <img src="https://img.shields.io/badge/Make-161616?style=for-the-badge&logo=make&logoColor=white" alt="Make"/>
+  <img src="https://img.shields.io/badge/Zapier-FF4A00?style=for-the-badge&logo=zapier&logoColor=white" alt="Zapier"/>
+  <img src="https://img.shields.io/badge/Claude%20Code-D97757?style=for-the-badge&logo=anthropic&logoColor=white" alt="Claude Code"/>
+  <img src="https://img.shields.io/badge/OpenAI%20Codex-412991?style=for-the-badge&logo=openai&logoColor=white" alt="OpenAI Codex"/>
+  <img src="https://img.shields.io/badge/Google%20Antigravity-4285F4?style=for-the-badge&logo=google&logoColor=white" alt="Google Antigravity"/>
 </p>
 
-*   🔭 I’m currently working on my **Personal Portfolio Website**
-*   🌱 I’m currently learning **Python**
-*   📫 How to reach me: [**LinkedIn**](https://www.linkedin.com/in/eljhon-satsat/) | [**Instagram**](https://www.instagram.com/st_tib/) | [**Facebook**](https://www.facebook.com/eljhon.satsat.2025)
-*   😄 Pronouns: **he/him**
-*   ⚡ Fun fact: **I can speak 4 languages (including Mandarin)**
+**`[CURRENT_STATE]`**
+*   ⚙️ **Active Process:** Compiling my **Personal Portfolio Website**
+*   🧠 **Training Data:** Ingesting **Python** syntax and libraries
+*   🗣️ **NLP Capabilities:** Processing 4 human languages (including **Mandarin** at a TOCFL B1 level! 🇹🇼)
+*   📫 **Ping Me:** [**LinkedIn**](https://www.linkedin.com/in/eljhon-satsat/) | [**Instagram**](https://www.instagram.com/st_tib/) | [**Facebook**](https://www.facebook.com/eljhon.satsat.2025)
+*   🤖 **Pronouns:** **he/him**
 
 <p align="left">
   <a href="https://www.linkedin.com/in/eljhon-satsat/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
