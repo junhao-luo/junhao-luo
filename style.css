@@ -93,6 +93,78 @@ body {
   padding: 0 1.5rem;
 }
 
+/* ==========================================================================
+   Dynamic Animated Background & Ambient Lights
+   ========================================================================== */
+.cyber-grid {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(56, 189, 248, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 189, 248, 0.035) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: -2;
+}
+
+.glow-orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(110px);
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.38;
+  will-change: transform;
+}
+
+.orb-1 {
+  top: -8%;
+  right: 5%;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, #0ea5e9, rgba(14, 165, 233, 0.4), transparent 70%);
+  animation: floatOrb1 18s ease-in-out infinite alternate;
+}
+
+.orb-2 {
+  bottom: 12%;
+  left: -8%;
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, #10b981, rgba(16, 185, 129, 0.35), transparent 70%);
+  animation: floatOrb2 22s ease-in-out infinite alternate;
+}
+
+.orb-3 {
+  top: 42%;
+  right: 25%;
+  width: 360px;
+  height: 360px;
+  background: radial-gradient(circle, #6366f1, rgba(99, 102, 241, 0.3), transparent 70%);
+  animation: floatOrb3 20s ease-in-out infinite alternate;
+}
+
+@keyframes floatOrb1 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-70px, 90px) scale(1.12); }
+  100% { transform: translate(50px, 40px) scale(0.92); }
+}
+
+@keyframes floatOrb2 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(90px, -70px) scale(1.15); }
+  100% { transform: translate(-40px, -90px) scale(0.9); }
+}
+
+@keyframes floatOrb3 {
+  0% { transform: translate(0, 0) scale(0.9); }
+  50% { transform: translate(-60px, -50px) scale(1.18); }
+  100% { transform: translate(40px, 60px) scale(1.02); }
+}
+
 /* Typography Utilities */
 .code-font {
   font-family: var(--font-mono);
@@ -623,38 +695,89 @@ body {
   border-radius: var(--radius-full);
 }
 
-/* GPU-Accelerated ScaleX Progress Bar */
+/* Progress Track & Fill (Clean bar, no text on top) */
+.progress-track-wrapper {
+  position: relative;
+  margin-bottom: 2.75rem;
+  padding-top: 1.5rem;
+}
+
+/* Hover Text Bubble showing 12.5% */
+.progress-bubble {
+  position: absolute;
+  top: -12px;
+  left: 12.5%;
+  transform: translateX(-50%) translateY(4px);
+  opacity: 0;
+  pointer-events: none;
+  background: var(--cyan-primary);
+  color: #060a12;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.3rem 0.75rem;
+  border-radius: 6px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+  transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1), transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 10;
+}
+
+/* Text bubble pointer arrow pointing down to the bar */
+.progress-bubble::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px 5px 0 5px;
+  border-style: solid;
+  border-color: var(--cyan-primary) transparent transparent transparent;
+}
+
 .progress-track {
   width: 100%;
-  height: 22px;
+  height: 24px;
   background: var(--bg-surface);
   border-radius: var(--radius-full);
   border: 1px solid var(--border-subtle);
-  padding: 3px;
   position: relative;
-  margin-bottom: 2.5rem;
   overflow: hidden;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.45);
+  cursor: pointer;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
+
+.progress-track-wrapper:hover .progress-track,
+.progress-track:focus-visible {
+  border-color: var(--border-accent-bright);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.45), 0 0 12px rgba(56, 189, 248, 0.25);
+}
+
 .progress-fill {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, #38bdf8, #10b981);
-  border-radius: var(--radius-full);
-  transform-origin: left;
-  transform: scaleX(0.125);
-  transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
-  position: relative;
-}
-.progress-tooltip {
   position: absolute;
-  right: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: var(--bg-main);
-  white-space: nowrap;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 12.5%;
+  background: linear-gradient(90deg, #0284c7, #10b981);
+  border-radius: var(--radius-full);
+  transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 0 14px rgba(14, 165, 233, 0.35);
+}
+
+/* Reveal text bubble on hover & focus */
+.progress-track-wrapper:hover .progress-bubble,
+.progress-track:focus-visible ~ .progress-bubble,
+.progress-track-wrapper:focus-within .progress-bubble {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+@media (max-width: 480px) {
+  .progress-bubble {
+    left: max(32px, 12.5%);
+  }
 }
 
 .milestones-row {
