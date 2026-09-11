@@ -13,3 +13,19 @@ venv/
 .DS_Store
 Thumbs.db
 
+# Graphify artifacts & cache
+graphify-out/
+.graphify-out/
+.graphify/
+graph.json
+graph.html
+GRAPH_REPORT.md
+
+# Screenshots, test captures & motion audits
+test_*.html
+*.png
+!profile.jpg
+!avatar.png
+motion-audits/
+live_captures/
+glass-captures/

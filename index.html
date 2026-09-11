@@ -3,497 +3,1339 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eljhon Steve Satsat (羅俊豪) | Automation Architect & AI Engineer</title>
-  <meta name="description" content="Portfolio of Eljhon Steve Satsat (羅俊豪) - Automation Architect, AI Technology & Application student at Feng Chia University, Taiwan.">
-  <meta name="theme-color" content="#080c14">
+  <title>Eljhon Steve (羅俊豪) | Automation Architect &amp; AI Engineer</title>
+  <meta name="description" content="Portfolio of Eljhon Steve (羅俊豪) - Automation Architect &amp; AI Technology Specialist, Feng Chia University, Taiwan.">
+  <meta name="theme-color" content="#030712">
 
   <!-- Open Graph / Social Meta -->
-  <meta property="og:title" content="Junhao Luo (Ejhon) | Automation Architect & AI Engineer">
-  <meta property="og:description" content="Automation Architect & AI Student at Feng Chia University. AI Automation, Video Editing, Graphic Design, and Virtual Assistance.">
+  <meta property="og:title" content="Eljhon Steve (羅俊豪) | Automation Architect">
+  <meta property="og:description" content="Portfolio of Eljhon Steve (羅俊豪) - AI Automation, Workflow Engineering, Multimodal Production, and Operations.">
   <meta property="og:image" content="profile.jpg">
   <meta property="og:type" content="website">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
 
-  <!-- Google Fonts: JetBrains Mono & Outfit -->
+  <!-- Google Fonts: Space Grotesk, Outfit, Caveat (Cursive Accent), JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Stylesheet -->
+  <!-- Three.js Import Map for AI Blue Orb Swarm Engine -->
+  <script type="importmap">
+  {
+      "imports": {
+          "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+      }
+  }
+  </script>
+  <script type="module" src="orb-background.js"></script>
+
+  <!-- Main Stylesheet -->
   <link rel="stylesheet" href="style.css">
-<body>
+  <!-- JSON-LD Local Business & Professional Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Eljhon Steve (羅俊豪) - AI Automation Architect",
+    "alternateName": "Eljhon Automation",
+    "image": "https://eljhon.me/profile.jpg",
+    "@id": "https://eljhon.me/#architect",
+    "url": "https://eljhon.me",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Taichung",
+      "addressRegion": "Taiwan",
+      "postalCode": "407",
+      "addressCountry": "TW"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 24.179,
+      "longitude": 120.648
+    },
+    "founder": {
+      "@type": "Person",
+      "name": "Eljhon Steve (羅俊豪)",
+      "jobTitle": "Automation Architect & AI Engineer",
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Feng Chia University"
+      },
+      "knowsLanguage": ["English", "Mandarin Chinese", "Tagalog", "Filipino"],
+      "sameAs": [
+        "https://www.linkedin.com/in/eljhon-satsat/",
+        "https://www.instagram.com/st_tib/",
+        "https://www.facebook.com/eljhon.satsat.2025"
+      ]
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "AI Automation & Technical Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Autonomous AI Agent Architecture",
+            "description": "Custom autonomous multi-agent systems, LLM reasoning chains, and integration pipelines."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Workflow Automation (n8n, Make, Zapier)",
+            "description": "Multi-step webhook pipelines and enterprise SaaS connectors eliminating manual data friction."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Multimodal Media & Motion Design",
+            "description": "High-impact video editing, visual branding, and interactive UI systems."
+          }
+        }
+      ]
+    }
+  }
+  </script>
+</head>
+<body class="cre8tera-theme">
 
-  <!-- Dynamic Animated Background & Lights -->
-  <div class="cyber-grid" aria-hidden="true"></div>
-  <div class="glow-orb orb-1" aria-hidden="true"></div>
-  <div class="glow-orb orb-2" aria-hidden="true"></div>
-  <div class="glow-orb orb-3" aria-hidden="true"></div>
+  <!-- 3D Three.js AI Blue Orb Swarm Background Canvas -->
+  <canvas id="aiOrbCanvas" class="ai-orb-canvas" aria-hidden="true"></canvas>
 
-  <!-- Navigation Bar -->
-  <header class="site-header">
+  <!-- Technical Schematic Dot-Matrix Overlay & Corner Crosshairs -->
+  <div class="technical-grid-overlay" aria-hidden="true"></div>
+  <div class="viewport-crosshairs" aria-hidden="true">
+    <span class="v-cross v-tl">+</span>
+    <span class="v-cross v-tr">+</span>
+    <span class="v-cross v-bl">+</span>
+    <span class="v-cross v-br">+</span>
+  </div>
+
+  <!-- Persistent Bottom Center Viewport Slider (Cre8tera Signature Element) -->
+  <div class="sticky-viewport-slider" id="stickySlider" aria-label="Page navigation scroll slider" role="region">
+    <div class="slider-capsule">
+      <div class="slider-scale-labels" aria-hidden="true">
+        <span>0</span>
+        <span>0.2</span>
+        <span>0.4</span>
+        <span>0.6</span>
+        <span>0.8</span>
+        <span>1.0</span>
+      </div>
+      <div class="slider-track-line">
+        <div class="slider-tick-mark t-0"></div>
+        <div class="slider-tick-mark t-2"></div>
+        <div class="slider-tick-mark t-4"></div>
+        <div class="slider-tick-mark t-6"></div>
+        <div class="slider-tick-mark t-8"></div>
+        <div class="slider-tick-mark t-10"></div>
+        <div class="slider-progress-bar" id="sliderProgressBar"></div>
+        <div class="slider-thumb" id="sliderThumb" tabindex="0" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Scroll percentage">
+          <span class="thumb-glow"></span>
+          <span class="thumb-tooltip" id="sliderTooltip">0%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Floating Minimalist Header -->
+  <header class="site-header" id="siteHeader">
     <div class="header-inner container">
-      <a href="#hero" class="brand-terminal" aria-label="Home">
-        <span class="prompt-symbol">&gt;</span>
-        <span class="brand-text">system.init("<span class="cyan-text">Ejhon</span>")</span>
-        <span class="blinking-cursor">_</span>
+      <!-- Left: Logo & Wordmark -->
+      <a href="#hero" class="brand-logo" aria-label="Eljhon Steve (羅俊豪)">
+        <span class="logo-symbol" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5" stroke="#00e5ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="12" r="3" fill="#00e5ff"/>
+          </svg>
+        </span>
+        <span class="brand-name">ELJHON</span>
       </a>
 
-      <nav class="nav-menu" id="navMenu" aria-label="Main Navigation">
-        <a href="#about" class="nav-link">Profile</a>
-        <a href="#checkpoint" class="nav-link">Checkpoint</a>
-        <a href="#modules" class="nav-link">Modules</a>
-        <a href="#tech-stack" class="nav-link">Tech Stack</a>
-        <a href="#state" class="nav-link">State</a>
-        <a href="#contact" class="nav-cta-btn">Ping Me</a>
-      </nav>
-
-      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation Menu">
-        <span></span>
-        <span></span>
-        <span></span>
+      <!-- Center: Floating Pill Menu Button -->
+      <button class="nav-pill-menu" id="menuToggle" aria-expanded="false" aria-controls="mobileMenuDrawer" aria-label="Toggle navigation menu">
+        <span class="status-indicator-dot" aria-hidden="true"></span>
+        <span class="menu-label">Menu</span>
       </button>
+
+      <!-- Right: Direct Actions -->
+      <div class="header-actions">
+        <a href="#about" class="nav-ghost-link">· Connect</a>
+        <a href="#contact" class="try-demo-pill">
+          <svg class="cursor-pill-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M4 0l16 12.279-6.951 1.17 4.325 8.817-3.596 1.734-4.35-8.879-5.428 5.242z"/>
+          </svg>
+          <span>Ping Me</span>
+        </a>
+      </div>
     </div>
+
+    <!-- Dropdown Menu Drawer -->
+    <nav class="nav-drawer" id="mobileMenuDrawer" aria-label="Site directory">
+      <div class="drawer-links">
+        <a href="#hero" class="drawer-item"><span class="drawer-num">01</span><span>Home</span></a>
+        <a href="#checkpoint" class="drawer-item"><span class="drawer-num">02</span><span>Degree Checkpoint</span></a>
+        <a href="#modules" class="drawer-item"><span class="drawer-num">03</span><span>Core Modules</span></a>
+        <a href="#about" class="drawer-item"><span class="drawer-num">04</span><span>Architect Profile</span></a>
+        <a href="#ecosystem" class="drawer-item"><span class="drawer-num">05</span><span>Ecosystem &amp; Stack</span></a>
+        <a href="#contact" class="drawer-item"><span class="drawer-num">06</span><span>Establish Connection</span></a>
+      </div>
+    </nav>
   </header>
 
   <main>
-    <!-- Hero Terminal Section -->
-    <section id="hero" class="hero-section container">
-      <div class="terminal-card">
-        <div class="terminal-bar">
-          <div class="window-buttons" aria-hidden="true">
-            <span class="btn-circle red"></span>
-            <span class="btn-circle yellow"></span>
-            <span class="btn-circle green"></span>
-          </div>
-          <div class="terminal-title">ejhon@feng-chia-ai:~ (zsh)</div>
-          <div class="system-status-pill">
-            <span class="live-dot" aria-hidden="true"></span> Online
-          </div>
+    <!-- SECTION 1: THE HERO (Interactive Kinetic Typography) -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-container">
+        
+        <!-- Top Tech Badge -->
+        <div class="hero-top-badge-wrap">
+          <span class="tech-badge">[ AI AUTOMATION SPECIALIST • TAIWAN ]</span>
         </div>
 
-        <div class="terminal-body">
-          <div class="console-line">
-            <span class="cmd-prompt">user@autonomous:~$</span>
-            <span id="typedCommand" class="cmd-command"></span><span class="type-cursor" aria-hidden="true">|</span>
-          </div>
-
-          <div class="boot-logs" id="bootLogs">
-            <p class="log-item dim">[0.0012s] Initializing neural architecture and automation runtime...</p>
-            <p class="log-item dim">[0.0028s] Connected to Feng Chia University AI node (Taichung, Taiwan)</p>
-            <p class="log-item green">[0.0041s] Pipeline verified: Automation • Media • Design • Operations</p>
-          </div>
-
-          <div class="hero-main-content">
-            <h1 class="hero-title">Junhao Luo <span class="alias">(Ejhon)</span></h1>
-            <p class="hero-subtitle">Automation Architect &amp; AI Student at Feng Chia University</p>
-            <p class="hero-desc">
-              Building intelligent automation workflows, agentic AI pipelines, and multimodal creative output from 
-              <strong>Feng Chia University</strong> in Taiwan.
+        <div class="hero-grid-trio">
+          <!-- Left Column Intro -->
+          <div class="hero-col-left glass-text-card">
+            <span class="crop-corner c-tl" aria-hidden="true"></span>
+            <span class="crop-corner c-tr" aria-hidden="true"></span>
+            <span class="crop-corner c-bl" aria-hidden="true"></span>
+            <span class="crop-corner c-br" aria-hidden="true"></span>
+            <p class="hero-col-title">Intelligent Systems &amp; Automation</p>
+            <p class="hero-col-desc">
+              Welcome to the portfolio of <strong>Eljhon Steve (羅俊豪)</strong>. Designing custom AI agents, automated workflows, and digital operations that help modern businesses scale.
             </p>
+          </div>
 
-            <div class="hero-badges">
-              <span class="tech-pill">AI Automation</span>
-              <span class="tech-pill">Video Editing</span>
-              <span class="tech-pill">Graphic Design</span>
-              <span class="tech-pill">Virtual Assistance</span>
-            </div>
+          <!-- Centerpiece: Kinetic Typography & Tumbler Box -->
+          <div class="hero-centerpiece">
+            <h1 class="hero-headline">
+              <span class="headline-part-top">Architect</span>
+              <span class="headline-part-bottom">
+                <span class="word-your">your</span>
+                <span class="tumbler-box" id="tumblerBox" aria-live="polite">
+                  <span class="crop-corner c-tl" aria-hidden="true"></span>
+                  <span class="crop-corner c-tr" aria-hidden="true"></span>
+                  <span class="crop-corner c-bl" aria-hidden="true"></span>
+                  <span class="crop-corner c-br" aria-hidden="true"></span>
+                  <span class="tumbler-word cursive-accent active" data-index="0">workflows</span>
+                  <span class="tumbler-word cursive-accent" data-index="1">agents</span>
+                  <span class="tumbler-word cursive-accent" data-index="2">systems</span>
+                  <span class="tumbler-word cursive-accent" data-index="3">operations</span>
+                </span>
+              </span>
+            </h1>
 
-            <div class="hero-actions">
-              <a href="#modules" class="primary-btn">
-                <span>Explore Core Modules</span>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17l9.2-9.2M17 17V8H8"/></svg>
-              </a>
-              <a href="#contact" class="secondary-btn">
-                <span>Contact Channels</span>
+            <div class="hero-cta-wrapper">
+              <a href="#checkpoint" class="hero-cta-btn">
+                <svg class="cta-cursor-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M4 0l16 12.279-6.951 1.17 4.325 8.817-3.596 1.734-4.35-8.879-5.428 5.242z"/>
+                </svg>
+                <span>Explore Ecosystem</span>
               </a>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Profile Section -->
-    <section id="about" class="section container">
-      <h2 class="section-title">Architect Profile</h2>
-
-      <div class="profile-layout">
-        <div class="avatar-card">
-          <div class="avatar-wrapper">
-            <img src="profile.jpg" alt="Eljhon Steve Satsat (羅俊豪)" class="avatar-img" onerror="this.onerror=null;this.src='https://i.postimg.cc/SsDdZ5SC/IMG-7441-Original.jpg';" referrerpolicy="no-referrer">
-          </div>
-          <div class="avatar-info">
-            <h3 class="avatar-name">Eljhon Steve Satsat (羅俊豪)</h3>
-            <p class="avatar-sub">Automation Architect / AI Student</p>
-            <div class="profile-meta">
-              <span class="pronoun-badge">he/him</span>
-              <span class="location-badge">Taichung, Taiwan</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="bio-card">
-          <div class="card-header-bar">
-            <span class="card-chip">About Ejhon</span>
-            <span class="card-status">Status: Active</span>
-          </div>
-          <div class="bio-content">
-            <p class="lead-text">
-              Hello! I'm <strong>Ejhon</strong>. I am an automation architect and student at 
-              <span class="highlight">Feng Chia University</span> in Taiwan, currently executing my Bachelor's Program of 
-              <span class="highlight">Artificial Intelligence Technology and Application</span>.
+          <!-- Right Column Mission Statement -->
+          <div class="hero-col-right glass-text-card">
+            <span class="crop-corner c-tl" aria-hidden="true"></span>
+            <span class="crop-corner c-tr" aria-hidden="true"></span>
+            <span class="crop-corner c-bl" aria-hidden="true"></span>
+            <span class="crop-corner c-br" aria-hidden="true"></span>
+            <p class="hero-col-title">Feng Chia University</p>
+            <p class="hero-col-desc">
+              Pursuing a Bachelor's in <strong>Artificial Intelligence Technology &amp; Applications</strong> in Taichung, Taiwan. Specializing in intelligent workflow automation, agentic systems, and digital media production.
             </p>
-            <p>
-              My core focus centers on <strong>AI Automation</strong> and building agentic workflows, complemented by multimodal creative execution through <strong>video editing</strong> and <strong>graphic design</strong>.
-            </p>
-            <p>
-              I deploy these capabilities as a <strong>Freelance Virtual Assistant</strong>, combining technical automation with structured operational delivery.
-            </p>
+          </div>
+        </div>
 
-            <div class="stats-grid">
-              <div class="stat-box">
-                <span class="stat-label">Institution</span>
-                <span class="stat-value">Feng Chia Univ.</span>
+        <!-- Scroll down indicator hint -->
+        <div class="scroll-down-hint" aria-hidden="true">
+          <span class="scroll-arrow">↓</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 2: HORIZON ECLIPSE & DEGREE CHECKPOINT -->
+    <section id="checkpoint" class="horizon-checkpoint-section">
+      <!-- Glowing Blue Planetary Curved Horizon Arc -->
+      <div class="horizon-planetary-arc" aria-hidden="true">
+        <div class="horizon-glow-line"></div>
+      </div>
+
+      <div class="container checkpoint-container">
+        <div class="section-header-glass-card glass-text-card">
+          <span class="crop-corner c-tl" aria-hidden="true"></span>
+          <span class="crop-corner c-tr" aria-hidden="true"></span>
+          <span class="crop-corner c-bl" aria-hidden="true"></span>
+          <span class="crop-corner c-br" aria-hidden="true"></span>
+          <div class="section-badge-row">
+            <span class="floating-badge">FENG CHIA UNIVERSITY • AI DEGREE</span>
+          </div>
+          <h2 class="horizon-headline">
+            Building modern AI expertise, one milestone at a time.
+          </h2>
+          <p class="section-main-sub">
+            Academic roadmap &amp; training milestones in Artificial Intelligence Technology &amp; Applications at Feng Chia University, Taichung.
+          </p>
+        </div>
+
+        <!-- Interactive Degree Progress Card -->
+        <div class="checkpoint-glass-card">
+          <div class="checkpoint-card-bar">
+            <div class="card-bar-left">
+              <span class="terminal-dot green"></span>
+              <span class="code-mono">academic_degree_roadmap</span>
+            </div>
+            <div class="card-bar-right">
+              <span class="epoch-chip">Year 1 of 4</span>
+            </div>
+          </div>
+
+          <div class="checkpoint-card-body">
+            <div class="progress-metric-header">
+              <div class="metric-title-wrap">
+                <span class="metric-label">Degree Milestone:</span>
+                <span class="code-mono cyan-highlight">&gt; Freshman Year: 12.5% Completed</span>
               </div>
-              <div class="stat-box">
-                <span class="stat-label">Degree</span>
-                <span class="stat-value">AI Tech &amp; App</span>
-              </div>
-              <div class="stat-box">
-                <span class="stat-label">Focus Area</span>
-                <span class="stat-value">Agentic Systems</span>
-              </div>
-              <div class="stat-box">
-                <span class="stat-label">Languages</span>
-                <span class="stat-value">4 Human Langs</span>
+              <div class="metric-loss-wrap">
+                <span class="pulsing-live-dot" aria-hidden="true"></span>
+                <span class="code-mono">Status: <strong class="green-text">Top Academic Standing</strong></span>
               </div>
             </div>
+
+            <!-- Degree Progress Bar with Hover Tooltip Bubble (Strict user requirement) -->
+            <div class="progress-track-wrapper">
+              <div class="progress-bubble" id="progressBubble" aria-hidden="true">12.5%</div>
+              <div class="progress-track" id="degreeProgressTrack" role="progressbar" aria-valuenow="12.5" aria-valuemin="0" aria-valuemax="100" aria-label="Degree training progress: 12.5% completed" tabindex="0">
+                <div class="progress-fill" id="degreeProgressFill"></div>
+              </div>
+            </div>
+
+            <!-- Animated Epoch Connecting Pipeline Rail -->
+            <div class="epoch-pipeline-rail" aria-hidden="true">
+              <div class="pipeline-rail-track"></div>
+              <div class="pipeline-rail-progress"></div>
+              <div class="rail-packet-stream">
+                <span class="rail-packet p1"></span>
+                <span class="rail-packet p2"></span>
+                <span class="rail-packet p3"></span>
+              </div>
+            </div>
+
+            <!-- Milestone Epoch Nodes (All dynamic with kinetic animations & telemetry) -->
+            <div class="milestones-row">
+              
+              <!-- Milestone 1: Current Active Year -->
+              <div class="milestone-box active epoch-node" tabindex="0" role="button" aria-label="Year 1: AI & Python Fundamentals (Active 12.5%)">
+                <div class="milestone-laser-beam"></div>
+                <div class="milestone-top-row">
+                  <div class="milestone-dot-wrap">
+                    <span class="m-dot active-dot">
+                      <span class="m-dot-ping"></span>
+                    </span>
+                  </div>
+                  <span class="epoch-status-badge active-badge">
+                    <span class="badge-pulse-beacon"></span>
+                    <span>ACTIVE • YEAR 1</span>
+                  </span>
+                </div>
+
+                <h3 class="milestone-title">Year 1 (12.5%)</h3>
+                <p class="milestone-sub">AI &amp; Python Fundamentals</p>
+
+                <!-- Dynamic Live Loss Curve Sparkline -->
+                <div class="epoch-mini-telemetry">
+                  <div class="telemetry-sparkline-wrap" aria-hidden="true">
+                    <svg class="sparkline-svg" viewBox="0 0 100 24" preserveAspectRatio="none">
+                      <path class="sparkline-path live-curve" d="M 0,18 Q 15,4 30,14 T 60,8 T 85,16 T 100,6"></path>
+                    </svg>
+                    <span class="sparkline-head-dot"></span>
+                  </div>
+                  <div class="telemetry-stat-row">
+                    <span class="code-mono stat-label">STATUS:</span>
+                    <span class="code-mono stat-val cyan-text">ON TRACK</span>
+                    <span class="stat-trend green-text">✓ Verified</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Milestone 2: Machine Learning & Agents -->
+              <div class="milestone-box epoch-node" tabindex="0" role="button" aria-label="Year 2: Machine Learning & Agents (Upcoming)">
+                <div class="milestone-laser-beam"></div>
+                <div class="milestone-top-row">
+                  <div class="milestone-dot-wrap">
+                    <span class="m-dot queued-dot">
+                      <span class="m-dot-orbit"></span>
+                    </span>
+                  </div>
+                  <span class="epoch-status-badge queued-badge">
+                    <span class="badge-beacon-blue"></span>
+                    <span>UPCOMING</span>
+                  </span>
+                </div>
+
+                <h3 class="milestone-title">Year 2</h3>
+                <p class="milestone-sub">Machine Learning &amp; Agents</p>
+
+                <!-- Dynamic Animated Synapse Nodes -->
+                <div class="epoch-mini-telemetry">
+                  <div class="neural-synapse-viz" aria-hidden="true">
+                    <span class="synapse-node n1"></span>
+                    <span class="synapse-link l1"></span>
+                    <span class="synapse-node n2 active"></span>
+                    <span class="synapse-link l2"></span>
+                    <span class="synapse-node n3"></span>
+                  </div>
+                  <div class="telemetry-stat-row">
+                    <span class="code-mono stat-label">FOCUS:</span>
+                    <span class="code-mono stat-val blue-text">DEEP LEARNING</span>
+                    <span class="code-mono stat-sub dim-text">Year 2</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Milestone 3: System Architecture -->
+              <div class="milestone-box epoch-node" tabindex="0" role="button" aria-label="Year 3: Autonomous Systems Architecture (Planned)">
+                <div class="milestone-laser-beam"></div>
+                <div class="milestone-top-row">
+                  <div class="milestone-dot-wrap">
+                    <span class="m-dot standby-dot">
+                      <span class="m-dot-breath"></span>
+                    </span>
+                  </div>
+                  <span class="epoch-status-badge standby-badge">
+                    <span class="badge-beacon-purple"></span>
+                    <span>PLANNED</span>
+                  </span>
+                </div>
+
+                <h3 class="milestone-title">Year 3</h3>
+                <p class="milestone-sub">Autonomous Systems Architecture</p>
+
+                <!-- Dynamic Multi-Agent Cluster Telemetry -->
+                <div class="epoch-mini-telemetry">
+                  <div class="cluster-activity-viz" aria-hidden="true">
+                    <span class="cluster-meter m1"></span>
+                    <span class="cluster-meter m2"></span>
+                    <span class="cluster-meter m3"></span>
+                    <span class="cluster-meter m4"></span>
+                    <span class="cluster-meter m5"></span>
+                  </div>
+                  <div class="telemetry-stat-row">
+                    <span class="code-mono stat-label">FOCUS:</span>
+                    <span class="code-mono stat-val purple-text">ENTERPRISE AI</span>
+                    <span class="code-mono stat-sub dim-text">Year 3</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Milestone 4: Graduation & Capstone -->
+              <div class="milestone-box epoch-node epoch-target" tabindex="0" role="button" aria-label="Year 4: Graduation & Capstone Project (Target)">
+                <div class="milestone-laser-beam"></div>
+                <div class="milestone-top-row">
+                  <div class="milestone-dot-wrap">
+                    <span class="m-dot target-dot">
+                      <span class="m-dot-crosshair"></span>
+                    </span>
+                  </div>
+                  <span class="epoch-status-badge target-badge">
+                    <span class="badge-beacon-gold"></span>
+                    <span>DEGREE</span>
+                  </span>
+                </div>
+
+                <h3 class="milestone-title">Year 4</h3>
+                <p class="milestone-sub">Graduation &amp; Capstone Project</p>
+
+                <!-- Dynamic Convergence Target Horizon -->
+                <div class="epoch-mini-telemetry">
+                  <div class="convergence-viz" aria-hidden="true">
+                    <div class="convergence-line"></div>
+                    <div class="convergence-target-reticle"></div>
+                  </div>
+                  <div class="telemetry-stat-row">
+                    <span class="code-mono stat-label">GOAL:</span>
+                    <span class="code-mono stat-val gold-text">GRADUATION</span>
+                    <span class="code-mono stat-sub dim-text">100%</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
           </div>
         </div>
+
       </div>
     </section>
 
-    <!-- Degree Checkpoint Section -->
-    <section id="checkpoint" class="section container">
-      <h2 class="section-title">Model Training Progress</h2>
-
-      <div class="checkpoint-card">
-        <div class="terminal-bar light">
-          <span class="terminal-title">training_epoch_monitor.py</span>
-          <span class="chip-epoch">Epoch 1 / 8</span>
+    <!-- SECTION 3: CORE OPERATING MODULES & NODE UI -->
+    <section id="modules" class="modules-showcase-section">
+      <div class="container">
+        
+        <div class="section-header-glass-card glass-text-card">
+          <span class="crop-corner c-tl" aria-hidden="true"></span>
+          <span class="crop-corner c-tr" aria-hidden="true"></span>
+          <span class="crop-corner c-bl" aria-hidden="true"></span>
+          <span class="crop-corner c-br" aria-hidden="true"></span>
+          <div class="section-badge-row">
+            <span class="floating-badge">CREATIVE GENAI PLATFORM</span>
+          </div>
+          <h2 class="section-main-heading">
+            All the tools you need.
+          </h2>
+          <p class="section-main-sub">
+            Harness the power of AI-powered workflow automation, dynamic visual engineering, and reliable operations.
+          </p>
         </div>
 
-        <div class="checkpoint-body">
-          <div class="progress-header">
-            <div>
-              <span class="progress-title">Degree Checkpoint:</span>
-              <span class="code-font highlight-cyan">&gt; Model Training Progress: Epoch 1/8 [█░░░░░░░] 12.5%</span>
-            </div>
-            <div class="loss-metric">
-              <span class="live-dot" aria-hidden="true"></span>
-              <span class="code-font">loss: <strong class="green-text">optimizing...</strong></span>
+        <!-- Staggered 3D Flip Glassmorphic Cards -->
+        <div class="staggered-modules-grid">
+          
+          <!-- Card 1: AI Automation -->
+          <div class="module-flip-card" tabindex="0" role="button" aria-label="AI Automation: Click or hover to view details">
+            <div class="flip-card-inner">
+              <!-- FRONT FACE: Shows Badge, Title, and Interaction Hint -->
+              <div class="flip-card-front">
+                <div class="card-accent-badge">
+                  <span class="cursive-script-badge">one</span>
+                  <span class="badge-label-upper">AI AUTOMATION</span>
+                </div>
+                <div class="front-title-container">
+                  <h3 class="card-feature-title">Agentic Workflow Chains.</h3>
+                </div>
+                <div class="flip-hint-pill" aria-hidden="true">
+                  <span>Hover to inspect</span>
+                  <span class="flip-icon">↻</span>
+                </div>
+              </div>
+
+              <!-- BACK FACE: Shows Full Description & Tags -->
+              <div class="flip-card-back">
+                <div class="card-accent-badge">
+                  <span class="cursive-script-badge">one</span>
+                  <span class="badge-label-upper">AI AUTOMATION</span>
+                </div>
+                <p class="card-feature-desc">
+                  Architecting self-healing automation routines, autonomous LLM chains, and integration pipelines that eliminate repetitive friction and run 24/7.
+                </p>
+                <div class="card-pill-tags">
+                  <span>n8n</span>
+                  <span>Make</span>
+                  <span>Zapier</span>
+                  <span>Autonomous Agents</span>
+                </div>
+              </div>
             </div>
           </div>
 
-          <!-- Interactive Degree Progress Track -->
-          <div class="progress-track-wrapper">
-            <div class="progress-bubble" aria-hidden="true">12.5%</div>
-            <div class="progress-track" role="progressbar" aria-valuenow="12.5" aria-valuemin="0" aria-valuemax="100" aria-label="Degree training progress: 12.5% completed" tabindex="0">
-              <div class="progress-fill"></div>
+          <!-- Card 2: Plug & Play Operations -->
+          <div class="module-flip-card shift-down" tabindex="0" role="button" aria-label="Plug & Play Operations: Click or hover to view details">
+            <div class="flip-card-inner">
+              <!-- FRONT FACE -->
+              <div class="flip-card-front">
+                <div class="card-accent-badge">
+                  <span class="cursive-script-badge">easy</span>
+                  <span class="badge-label-upper">PLUG &amp; PLAY</span>
+                </div>
+                <div class="front-title-container">
+                  <h3 class="card-feature-title">Reliable System Handlers.</h3>
+                </div>
+                <div class="flip-hint-pill" aria-hidden="true">
+                  <span>Hover to inspect</span>
+                  <span class="flip-icon">↻</span>
+                </div>
+              </div>
+
+              <!-- BACK FACE -->
+              <div class="flip-card-back">
+                <div class="card-accent-badge">
+                  <span class="cursive-script-badge">easy</span>
+                  <span class="badge-label-upper">PLUG &amp; PLAY</span>
+                </div>
+                <p class="card-feature-desc">
+                  Love clean pipelines? Custom integrations, instant webhook handlers, executive data flows, and freelance virtual assistance with absolute precision.
+                </p>
+                <div class="card-pill-tags">
+                  <span>Virtual Assistance</span>
+                  <span>Systems Optimization</span>
+                  <span>API Handlers</span>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div class="milestones-row">
-            <div class="milestone-item active">
-              <span class="milestone-dot" aria-hidden="true"></span>
-              <h3 class="milestone-name">Epoch 1 (12.5%)</h3>
-              <p class="milestone-desc">Foundational AI &amp; Python</p>
+          <!-- Card 3: Multimodal Generation -->
+          <div class="module-flip-card" tabindex="0" role="button" aria-label="Multimodal Generation: Click or hover to view details">
+            <div class="flip-card-inner">
+              <!-- FRONT FACE -->
+              <div class="flip-card-front">
+                <div class="card-accent-badge">
+                  <span class="cursive-script-badge">generate</span>
+                  <span class="badge-label-upper">MULTIMODAL OUTPUT</span>
+                </div>
+                <div class="front-title-container">
+                  <h3 class="card-feature-title">Create more, manage less.</h3>
+                </div>
+                <div class="flip-hint-pill" aria-hidden="true">
+                  <span>Hover to inspect</span>
+                  <span class="flip-icon">↻</span>
+                </div>
+              </div>
+
+              <!-- BACK FACE -->
+              <div class="flip-card-back">
+                <div class="card-accent-badge">
+                  <span class="cursive-script-badge">generate</span>
+                  <span class="badge-label-upper">MULTIMODAL OUTPUT</span>
+                </div>
+                <p class="card-feature-desc">
+                  Synthesizing high-engagement video editing, sharp motion cuts, and brand visual design with automated asset generation.
+                </p>
+                <div class="card-pill-tags">
+                  <span>Video Editing</span>
+                  <span>Motion Cuts</span>
+                  <span>Visual Branding</span>
+                  <span>UI Mockups</span>
+                </div>
+              </div>
             </div>
-            <div class="milestone-item">
-              <span class="milestone-dot" aria-hidden="true"></span>
-              <h3 class="milestone-name">Epoch 2–4</h3>
-              <p class="milestone-desc">Deep Learning &amp; Agents</p>
+          </div>
+
+        </div>
+
+        <!-- Interactive Node-Based Workflow Mockup (Cre8tera Frame 18 signature node UI) -->
+        <div class="node-workflow-board">
+          <div class="node-board-header">
+            <div class="board-header-left">
+              <span class="terminal-dot blue"></span>
+              <span class="code-mono">Interactive Automation Architecture</span>
             </div>
-            <div class="milestone-item">
-              <span class="milestone-dot" aria-hidden="true"></span>
-              <h3 class="milestone-name">Epoch 5–7</h3>
-              <p class="milestone-desc">System Architecture</p>
+            <span class="board-header-badge">LIVE PIPELINE</span>
+          </div>
+
+          <div class="node-canvas-area" id="nodeCanvasArea">
+            <!-- Stage 1: Event Trigger -->
+            <div class="pipeline-col col-trigger">
+              <div class="workflow-node node-trigger" id="nodeTrigger">
+                <div class="node-header"><span class="node-icon">⚡</span> Inbound Trigger</div>
+                <div class="node-body">
+                  <span class="node-meta">Webhook / Form Submission</span>
+                  <span class="node-tag">Client Request</span>
+                </div>
+                <div class="node-socket socket-right" id="socketTriggerOut" aria-hidden="true"></div>
+              </div>
             </div>
-            <div class="milestone-item">
-              <span class="milestone-dot" aria-hidden="true"></span>
-              <h3 class="milestone-name">Epoch 8 (Graduation)</h3>
-              <p class="milestone-desc">Model Convergence</p>
+
+            <!-- Stage 2: Parallel Branches (Cognitive Reasoning + Flow Orchestration) -->
+            <div class="pipeline-col col-branches">
+              <!-- Top Branch: Claude / Codex Agent -->
+              <div class="workflow-node node-ai" id="nodeAi">
+                <div class="node-socket socket-left" id="socketAiIn" aria-hidden="true"></div>
+                <div class="node-header"><span class="node-icon">🧠</span> AI Decision Engine</div>
+                <div class="node-body">
+                  <span class="node-meta">Reasoning &amp; Analysis</span>
+                  <span class="node-tag">Claude / OpenAI</span>
+                </div>
+                <div class="node-socket socket-right" id="socketAiOut" aria-hidden="true"></div>
+              </div>
+
+              <!-- Bottom Branch: n8n / Make Engine -->
+              <div class="workflow-node node-router" id="nodeRouter">
+                <div class="node-socket socket-left" id="socketRouterIn" aria-hidden="true"></div>
+                <div class="node-header"><span class="node-icon">🔀</span> Smart Workflow Routing</div>
+                <div class="node-body">
+                  <span class="node-meta">Multi-App Integration</span>
+                  <span class="node-tag">n8n / Make Engine</span>
+                </div>
+                <div class="node-socket socket-right" id="socketRouterOut" aria-hidden="true"></div>
+              </div>
             </div>
+
+            <!-- Stage 3: Output Execution -->
+            <div class="pipeline-col col-output">
+              <div class="workflow-node node-output" id="nodeOutput">
+                <div class="node-socket socket-left" id="socketOutputIn" aria-hidden="true"></div>
+                <div class="node-header"><span class="node-icon">🚀</span> Instant Execution</div>
+                <div class="node-body">
+                  <span class="node-meta">Action Delivered</span>
+                  <span class="node-tag">Verified &amp; Notified</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Animated SVG Bezier Connector Lines (Dynamically Drawn to Sockets) -->
+            <svg class="node-connectors-svg" id="nodeConnectorsSvg" aria-hidden="true">
+              <path class="flow-bezier-curve" id="bezierTriggerToAi"></path>
+              <path class="flow-bezier-curve" id="bezierTriggerToRouter"></path>
+              <path class="flow-bezier-curve" id="bezierAiToOutput"></path>
+              <path class="flow-bezier-curve" id="bezierRouterToOutput"></path>
+            </svg>
           </div>
         </div>
+
       </div>
     </section>
 
-    <!-- Core Modules Section -->
-    <section id="modules" class="section container">
-      <h2 class="section-title">Core Operating Modules</h2>
-      <p class="section-subtitle">Multimodal capabilities spanning cognitive automation, dynamic media creation, and system operations.</p>
+    <!-- SECTION 4: THE ARCHITECT & CAPABILITY DOSSIER -->
+    <section id="about" class="architect-section">
+      <!-- Ambient Cybernetic Sonar Grid & Sweeping Radar -->
+      <div class="architect-ambient-radar" aria-hidden="true">
+        <div class="radar-concentric-circle r1"></div>
+        <div class="radar-concentric-circle r2"></div>
+        <div class="radar-concentric-circle r3"></div>
+        <div class="radar-sweep-cone"></div>
+        <div class="radar-grid-lines"></div>
+      </div>
 
-      <div class="modules-grid">
-        <!-- Module 1: AI Automation -->
-        <div class="module-card">
-          <div class="module-header">
-            <h3>AI Automation</h3>
+      <div class="container relative-z">
+        
+        <div class="section-header-glass-card glass-text-card">
+          <span class="crop-corner c-tl" aria-hidden="true"></span>
+          <span class="crop-corner c-tr" aria-hidden="true"></span>
+          <span class="crop-corner c-bl" aria-hidden="true"></span>
+          <span class="crop-corner c-br" aria-hidden="true"></span>
+          <div class="section-badge-row">
+            <span class="floating-badge">ABOUT &amp; EXPERTISE</span>
           </div>
-          <p class="module-desc">
-            Architecting agentic workflows, autonomous LLM chains, and integration pipelines that eliminate repetitive friction and automate complex business logic.
+          <h2 class="section-main-heading">
+            The Architect &amp; Capability Dossier
+          </h2>
+          <p class="section-main-sub">
+            Bridging autonomous artificial intelligence, multimodal media production, and bilingual cross-border execution.
           </p>
-          <div class="module-tags">
-            <span>Agentic Workflows</span>
-            <span>n8n</span>
-            <span>Make</span>
-            <span>Zapier</span>
-            <span>LLM Tooling</span>
-          </div>
         </div>
 
-        <!-- Module 2: Video Editing -->
-        <div class="module-card">
-          <div class="module-header">
-            <h3>Video Editing</h3>
+        <div class="architect-dossier-grid">
+          
+          <!-- Avatar & Identity Card with Clean Framing & Tilt -->
+          <div class="architect-id-card tilt-card" tabindex="0">
+            <div class="card-specular-sheen" aria-hidden="true"></div>
+            
+            <div class="avatar-crop-frame">
+              <span class="crop-corner c-tl" aria-hidden="true"></span>
+              <span class="crop-corner c-tr" aria-hidden="true"></span>
+              <span class="crop-corner c-bl" aria-hidden="true"></span>
+              <span class="crop-corner c-br" aria-hidden="true"></span>
+
+              <img src="profile.jpg" alt="Eljhon Steve (羅俊豪)" class="profile-avatar-img" onerror="this.onerror=null;this.src='https://i.postimg.cc/SsDdZ5SC/IMG-7441-Original.jpg';" referrerpolicy="no-referrer">
+            </div>
+
+            <div class="id-text-wrap">
+              <div class="id-role-indicator">
+                <span class="role-pulse-dot"></span>
+                <span>AUTOMATION SPECIALIST &amp; AI ENGINEER</span>
+              </div>
+              <h3 class="architect-name">Eljhon Steve (羅俊豪)</h3>
+              <p class="architect-tagline">Automation Architect &amp; AI Engineer</p>
+              
+              <div class="architect-meta-chips">
+                <span class="meta-chip chip-location">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                  <span>Taichung, Taiwan (24.179°N)</span>
+                </span>
+                <span class="meta-chip">he/him</span>
+                <span class="meta-chip active-chip">
+                  <span class="live-status-pulse"></span>
+                  <span>Status: Open to Projects</span>
+                </span>
+              </div>
+
+            </div>
           </div>
-          <p class="module-desc">
-            Crafting dynamic visual storytelling, high-engagement motion sequencing, audio-visual synchronization, and sharp multimedia content.
-          </p>
-          <div class="module-tags">
-            <span>Content Pacing</span>
-            <span>Motion Cuts</span>
-            <span>Audio Design</span>
-            <span>Short &amp; Long-form</span>
+
+          <!-- 3 Vertical File-Folder Panels with Fluid Ink Background (Cre8tera Frame 24 style) -->
+          <div class="folder-panels-container">
+            
+            <!-- Panel 01: Automation Systems -->
+            <div class="folder-panel tilt-card" tabindex="0">
+              <div class="card-specular-sheen" aria-hidden="true"></div>
+              
+              <!-- Fluid Ink / Watercolor Dynamic Backdrop -->
+              <div class="folder-fluid-backdrop" aria-hidden="true">
+                <div class="fluid-orb orb-1"></div>
+                <div class="fluid-orb orb-2"></div>
+                <div class="fluid-orb orb-3"></div>
+                <div class="fluid-mesh-pattern"></div>
+                <div class="fluid-bloom-pulse"></div>
+              </div>
+
+              <div class="folder-top-tab">
+                <span class="folder-num">01</span>
+                <span class="folder-tab-title">AUTOMATION SYSTEMS</span>
+                <span class="telemetry-status-pill green">
+                  <span class="pill-beacon green"></span>
+                  <span>RELIABLE</span>
+                </span>
+              </div>
+
+              <div class="folder-content">
+                <div class="folder-main-text">
+                  <h4 class="folder-heading">Connecting Every System.</h4>
+                  <p class="folder-text">
+                    Bridging artificial intelligence with everyday business workflows. Building resilient integrations, automated data syncs, and intelligent assistants that run 24/7 without manual effort.
+                  </p>
+                </div>
+
+                <!-- Animated Micro Data Pipeline Graphic -->
+                <div class="mini-data-flow" aria-hidden="true">
+                  <div class="mini-stage">
+                    <span class="mini-tag">TRIGGER</span>
+                  </div>
+                  <div class="mini-channel">
+                    <div class="channel-line"></div>
+                    <span class="channel-dot d1"></span>
+                    <span class="channel-dot d2"></span>
+                  </div>
+                  <div class="mini-stage active">
+                    <span class="mini-tag">AI AGENT</span>
+                  </div>
+                  <div class="mini-channel">
+                    <div class="channel-line"></div>
+                    <span class="channel-dot d1"></span>
+                    <span class="channel-dot d2"></span>
+                  </div>
+                  <div class="mini-stage target">
+                    <span class="mini-tag">DELIVER</span>
+                  </div>
+                </div>
+
+                <div class="folder-interactive-footer">
+                  <div class="folder-footer-meta">
+                    <span class="code-mono cyan-meta">STACK: Python / n8n / APIs</span>
+                    <span class="telemetry-speed">&gt; 99.9% UPTIME</span>
+                  </div>
+                  <div class="card-live-bar">
+                    <div class="card-live-fill fill-flow"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel 02: Digital Media & Design -->
+            <div class="folder-panel tilt-card" tabindex="0">
+              <div class="card-specular-sheen" aria-hidden="true"></div>
+              
+              <div class="folder-fluid-backdrop" aria-hidden="true">
+                <div class="fluid-orb orb-2"></div>
+                <div class="fluid-orb orb-3"></div>
+                <div class="fluid-orb orb-1"></div>
+                <div class="fluid-mesh-pattern"></div>
+                <div class="fluid-bloom-pulse"></div>
+              </div>
+
+              <div class="folder-top-tab">
+                <span class="folder-num">02</span>
+                <span class="folder-tab-title">DIGITAL MEDIA &amp; DESIGN</span>
+                <span class="telemetry-status-pill cyan">
+                  <span class="pill-beacon cyan"></span>
+                  <span>SYNCED</span>
+                </span>
+              </div>
+
+              <div class="folder-content">
+                <div class="folder-main-text">
+                  <h4 class="folder-heading">Create &amp; Engage.</h4>
+                  <p class="folder-text">
+                    Producing high-impact video editing, clean motion graphics, and modern visual design that makes your products and services immediately stand out to clients.
+                  </p>
+                </div>
+
+                <!-- Animated Video Viewfinder Timecode Badge -->
+                <div class="multimodal-rec-badge" aria-hidden="true">
+                  <div class="rec-left">
+                    <span class="rec-recording-dot"></span>
+                    <span class="rec-tag">LIVE REC</span>
+                  </div>
+                  <span class="rec-timecode code-mono" id="liveRecTimecode">00:24:19:12</span>
+                </div>
+
+                <div class="folder-interactive-footer">
+                  <div class="folder-footer-meta">
+                    <span class="code-mono cyan-meta">VIDEO / MOTION / UI</span>
+                    <!-- 8-Band Live Soundwave Equalizer Animation -->
+                    <div class="sound-equalizer" aria-hidden="true">
+                      <span class="eq-bar b1"></span>
+                      <span class="eq-bar b2"></span>
+                      <span class="eq-bar b3"></span>
+                      <span class="eq-bar b4"></span>
+                      <span class="eq-bar b5"></span>
+                      <span class="eq-bar b6"></span>
+                      <span class="eq-bar b7"></span>
+                      <span class="eq-bar b8"></span>
+                    </div>
+                  </div>
+                  <div class="card-live-bar">
+                    <div class="card-live-fill fill-media"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel 03: Global & Bilingual Ops -->
+            <div class="folder-panel tilt-card" tabindex="0">
+              <div class="card-specular-sheen" aria-hidden="true"></div>
+              
+              <div class="folder-fluid-backdrop" aria-hidden="true">
+                <div class="fluid-orb orb-3"></div>
+                <div class="fluid-orb orb-1"></div>
+                <div class="fluid-orb orb-2"></div>
+                <div class="fluid-mesh-pattern"></div>
+                <div class="fluid-bloom-pulse"></div>
+                <!-- Floating Holographic Chinese Glyphs -->
+                <div class="floating-glyph g1">智</div>
+                <div class="floating-glyph g2">流</div>
+                <div class="floating-glyph g3">創</div>
+              </div>
+
+              <div class="folder-top-tab">
+                <span class="folder-num">03</span>
+                <span class="folder-tab-title">GLOBAL &amp; BILINGUAL OPS</span>
+                <span class="telemetry-status-pill purple">
+                  <span class="pill-beacon purple"></span>
+                  <span>TOCFL B1</span>
+                </span>
+              </div>
+
+              <div class="folder-content">
+                <div class="folder-main-text">
+                  <h4 class="folder-heading">Global Communication.</h4>
+                  <p class="folder-text">
+                    Fluent across 4 languages with certified TOCFL B1 Mandarin Chinese. Connecting international teams and clients seamlessly across East Asia and global markets.
+                  </p>
+                </div>
+
+                <!-- Animated Language Spectrum Strip -->
+                <div class="lang-spectrum-strip" aria-hidden="true">
+                  <span class="lang-pill active-lang"><span class="lang-dot"></span>ZH 中文 (繁體)</span>
+                  <span class="lang-pill">EN English</span>
+                  <span class="lang-pill">TL Tagalog</span>
+                  <span class="lang-pill">FIL Filipino</span>
+                </div>
+
+                <div class="folder-interactive-footer">
+                  <div class="folder-footer-meta">
+                    <span class="code-mono cyan-meta">TOCFL B1 MANDARIN • ENGLISH</span>
+                    <span class="telemetry-speed">BILINGUAL EXCELLENCE</span>
+                  </div>
+                  <div class="card-live-bar">
+                    <div class="card-live-fill fill-nlp"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
+
         </div>
 
-        <!-- Module 3: Graphic Design -->
-        <div class="module-card">
-          <div class="module-header">
-            <h3>Graphic Design</h3>
-          </div>
-          <p class="module-desc">
-            Synthesizing brand assets, UI/UX aesthetics, presentation decks, and visual graphics with a balanced eye for typography, layout, and contrast.
-          </p>
-          <div class="module-tags">
-            <span>Visual Branding</span>
-            <span>Social Creatives</span>
-            <span>UI Mockups</span>
-            <span>Vector Assets</span>
-          </div>
-        </div>
-
-        <!-- Module 4: Virtual Assistance -->
-        <div class="module-card">
-          <div class="module-header">
-            <h3>Virtual Assistance</h3>
-          </div>
-          <p class="module-desc">
-            Deploying high-reliability operational assistance, automated scheduling, data handling, and executive workflow coordination with technical precision.
-          </p>
-          <div class="module-tags">
-            <span>Systems Optimization</span>
-            <span>Operations</span>
-            <span>Workflow Handlers</span>
-            <span>Client Comms</span>
-          </div>
-        </div>
       </div>
     </section>
 
-    <!-- Tech Stack Section -->
-    <section id="tech-stack" class="section container">
-      <h2 class="section-title">Engineered Stack</h2>
-      <p class="section-subtitle">Primary tools, frameworks, and agentic environments powering daily workflows.</p>
-
-      <div class="tech-grid">
-        <!-- Python -->
-        <div class="tech-card">
-          <div class="badge-wrapper">
-            <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python technology badge" class="shield-badge">
+    <!-- SECTION 5: ECOSYSTEM & DASHBOARD SHOWCASE -->
+    <section id="ecosystem" class="ecosystem-section">
+      <div class="container">
+        
+        <div class="section-header-glass-card glass-text-card">
+          <span class="crop-corner c-tl" aria-hidden="true"></span>
+          <span class="crop-corner c-tr" aria-hidden="true"></span>
+          <span class="crop-corner c-bl" aria-hidden="true"></span>
+          <span class="crop-corner c-br" aria-hidden="true"></span>
+          <div class="section-badge-row">
+            <span class="floating-badge">TOOLS &amp; PLATFORMS</span>
           </div>
-          <h3>Python</h3>
-          <p>Core programming language for algorithmic processing, data structuring, and machine learning pipelines.</p>
-          <span class="tech-category">Programming / AI Core</span>
-        </div>
-
-        <!-- n8n -->
-        <div class="tech-card">
-          <div class="badge-wrapper">
-            <img src="https://img.shields.io/badge/n8n-FF6D5A?style=for-the-badge&logo=n8n&logoColor=white" alt="n8n technology badge" class="shield-badge">
-          </div>
-          <h3>n8n</h3>
-          <p>Node-based workflow automation and self-hosted agentic integration platform for complex logic trees.</p>
-          <span class="tech-category">Workflow Automation</span>
-        </div>
-
-        <!-- Make -->
-        <div class="tech-card">
-          <div class="badge-wrapper">
-            <img src="https://img.shields.io/badge/Make-161616?style=for-the-badge&logo=make&logoColor=white" alt="Make technology badge" class="shield-badge">
-          </div>
-          <h3>Make (Integromat)</h3>
-          <p>Visual orchestration engine connecting enterprise APIs, multi-step routers, and automated data stores.</p>
-          <span class="tech-category">API Integration</span>
-        </div>
-
-        <!-- Zapier -->
-        <div class="tech-card">
-          <div class="badge-wrapper">
-            <img src="https://img.shields.io/badge/Zapier-FF4A00?style=for-the-badge&logo=zapier&logoColor=white" alt="Zapier technology badge" class="shield-badge">
-          </div>
-          <h3>Zapier</h3>
-          <p>Rapid automation hooks, webhooks, and third-party SaaS interconnects for immediate business agility.</p>
-          <span class="tech-category">Cloud Automation</span>
-        </div>
-
-        <!-- Claude Code -->
-        <div class="tech-card">
-          <div class="badge-wrapper">
-            <img src="https://img.shields.io/badge/Claude%20Code-D97757?style=for-the-badge&logo=anthropic&logoColor=white" alt="Claude Code technology badge" class="shield-badge">
-          </div>
-          <h3>Claude Code</h3>
-          <p>Agentic terminal assistant for deep reasoning, architectural iteration, and autonomous codebase refactoring.</p>
-          <span class="tech-category">AI Agent Tooling</span>
-        </div>
-
-        <!-- OpenAI Codex -->
-        <div class="tech-card">
-          <div class="badge-wrapper">
-            <img src="https://img.shields.io/badge/OpenAI%20Codex-412991?style=for-the-badge&logo=openai&logoColor=white" alt="OpenAI Codex technology badge" class="shield-badge">
-          </div>
-          <h3>OpenAI Codex</h3>
-          <p>Generative code completion, logic translation, and algorithmic syntax synthesis.</p>
-          <span class="tech-category">Code Generation</span>
-        </div>
-
-        <!-- Google Antigravity -->
-        <div class="tech-card">
-          <div class="badge-wrapper">
-            <img src="https://img.shields.io/badge/Google%20Antigravity-4285F4?style=for-the-badge&logo=google&logoColor=white" alt="Google Antigravity technology badge" class="shield-badge">
-          </div>
-          <h3>Google Antigravity</h3>
-          <p>Autonomous AI pair programming system for multi-agent architecture and rapid iteration.</p>
-          <span class="tech-category">Autonomous Agents</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Current State & NLP Section -->
-    <section id="state" class="section container">
-      <h2 class="section-title">Active Processes &amp; NLP Matrix</h2>
-
-      <div class="state-grid">
-        <div class="state-card">
-          <div class="state-header">
-            <div>
-              <span class="state-status running">Running</span>
-              <h3>Active Process</h3>
-            </div>
-          </div>
-          <p class="state-main">Compiling Personal Portfolio Website</p>
-          <p class="state-desc">Designing and deploying this responsive digital architecture for showcase and client communication.</p>
-        </div>
-
-        <div class="state-card">
-          <div class="state-header">
-            <div>
-              <span class="state-status learning">Ingesting</span>
-              <h3>Training Data</h3>
-            </div>
-          </div>
-          <p class="state-main">Python Syntax &amp; Deep Libraries</p>
-          <p class="state-desc">Deepening knowledge in data structures, algorithms, agent design patterns, and asynchronous processing.</p>
-        </div>
-
-        <div class="state-card">
-          <div class="state-header">
-            <div>
-              <span class="state-status active">Multilingual</span>
-              <h3>NLP Capabilities</h3>
-            </div>
-          </div>
-          <p class="state-main">Processing 4 Human Languages</p>
-          <p class="state-desc">
-            Certified in <strong>Mandarin Chinese</strong> at a <strong>TOCFL B1 level</strong> (Taiwan), with strong cross-cultural communication capability.
+          <h2 class="section-main-heading">
+            Core Tools &amp; Technology Stack
+          </h2>
+          <p class="section-main-sub">
+            Battle-tested platforms and modern AI frameworks powering client workflows every day.
           </p>
         </div>
+
+        <!-- Tech Stack Web / Badge Grid -->
+        <div class="tech-ecosystem-grid">
+          <div class="ecosystem-pill-card">
+            <span class="card-bullet cyan"></span>
+            <div class="card-info">
+              <span class="tech-title">Python Core</span>
+              <span class="tech-category">Custom scripting &amp; AI logic</span>
+            </div>
+          </div>
+
+          <div class="ecosystem-pill-card">
+            <span class="card-bullet blue"></span>
+            <div class="card-info">
+              <span class="tech-title">n8n Automation</span>
+              <span class="tech-category">Multi-step webhook pipelines</span>
+            </div>
+          </div>
+
+          <div class="ecosystem-pill-card">
+            <span class="card-bullet cyan"></span>
+            <div class="card-info">
+              <span class="tech-title">Make (Integromat)</span>
+              <span class="tech-category">Visual API &amp; cloud connectors</span>
+            </div>
+          </div>
+
+          <div class="ecosystem-pill-card">
+            <span class="card-bullet blue"></span>
+            <div class="card-info">
+              <span class="tech-title">Zapier Cloud</span>
+              <span class="tech-category">Rapid SaaS integration</span>
+            </div>
+          </div>
+
+          <div class="ecosystem-pill-card">
+            <span class="card-bullet purple"></span>
+            <div class="card-info">
+              <span class="tech-title">Claude (Anthropic)</span>
+              <span class="tech-category">Advanced reasoning &amp; analysis</span>
+            </div>
+          </div>
+
+          <div class="ecosystem-pill-card">
+            <span class="card-bullet purple"></span>
+            <div class="card-info">
+              <span class="tech-title">OpenAI Systems</span>
+              <span class="tech-category">Intelligent prompts &amp; models</span>
+            </div>
+          </div>
+
+          <div class="ecosystem-pill-card">
+            <span class="card-bullet cyan"></span>
+            <div class="card-info">
+              <span class="tech-title">Google Antigravity</span>
+              <span class="tech-category">Autonomous multi-agent systems</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dashboard UI Showcase (Cre8tera Frame 30 inspired) -->
+        <div class="dashboard-split-mockup">
+          
+          <!-- Left: Parameter Controls & Live Monitor -->
+          <div class="dash-panel-left glass-text-card">
+            <span class="crop-corner c-tl" aria-hidden="true"></span>
+            <span class="crop-corner c-tr" aria-hidden="true"></span>
+            <span class="crop-corner c-bl" aria-hidden="true"></span>
+            <span class="crop-corner c-br" aria-hidden="true"></span>
+            <div class="dash-panel-title-bar">
+              <span class="panel-dot"></span>
+              <span class="code-mono">Operational Capacity &amp; Live Metrics</span>
+            </div>
+            
+            <div class="dash-controls-wrap">
+              <div class="control-row">
+                <div class="control-label-wrap">
+                  <span class="ctrl-label">Parallel Workflows</span>
+                  <span class="ctrl-val code-mono">High Concurrency</span>
+                </div>
+                <div class="mock-range-track"><div class="mock-range-fill" style="width: 85%;"></div></div>
+              </div>
+
+              <div class="control-row">
+                <div class="control-label-wrap">
+                  <span class="ctrl-label">Automation Reliability</span>
+                  <span class="ctrl-val code-mono">99.9% Uptime</span>
+                </div>
+                <div class="mock-range-track"><div class="mock-range-fill" style="width: 98%;"></div></div>
+              </div>
+
+              <div class="control-row">
+                <div class="control-label-wrap">
+                  <span class="ctrl-label">Turnaround Speed</span>
+                  <span class="ctrl-val code-mono">Under 24 Hours</span>
+                </div>
+                <div class="mock-range-track"><div class="mock-range-fill" style="width: 32%;"></div></div>
+              </div>
+
+              <div class="active-process-stream">
+                <div class="stream-item">
+                  <span class="stream-badge green">ACTIVE</span>
+                  <span class="stream-text">Delivering Automated Client Workflows</span>
+                </div>
+                <div class="stream-item">
+                  <span class="stream-badge cyan">AVAILABLE</span>
+                  <span class="stream-text">Open for Strategic Projects &amp; Consulting</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Staggered Pill Action Buttons with Pop-out Descriptions on Hover -->
+          <div class="dash-panel-right">
+            <div class="staggered-action-pill" tabindex="0">
+              <div class="pill-main-row">
+                <div class="action-icon-disc">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                </div>
+                <span class="action-title">AUTOMATION PIPELINES</span>
+                <span class="action-num">.01</span>
+              </div>
+              <div class="pill-popout-desc">
+                <p>Connecting your business apps, databases, and forms to eliminate repetitive data entry and save dozens of manual hours every week.</p>
+              </div>
+            </div>
+
+            <div class="staggered-action-pill" tabindex="0">
+              <div class="pill-main-row">
+                <div class="action-icon-disc">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                </div>
+                <span class="action-title">AGENTIC REASONING</span>
+                <span class="action-num">.02</span>
+              </div>
+              <div class="pill-popout-desc">
+                <p>Deploying intelligent AI assistants that understand instructions, research information, and complete multi-step tasks reliably.</p>
+              </div>
+            </div>
+
+            <div class="staggered-action-pill" tabindex="0">
+              <div class="pill-main-row">
+                <div class="action-icon-disc">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                </div>
+                <span class="action-title">MULTIMODAL PRODUCTION</span>
+                <span class="action-num">.03</span>
+              </div>
+              <div class="pill-popout-desc">
+                <p>Creating high-impact videos, crisp graphics, and modern UI designs that clearly communicate your brand's value to clients.</p>
+              </div>
+            </div>
+
+            <div class="staggered-action-pill" tabindex="0">
+              <div class="pill-main-row">
+                <div class="action-icon-disc">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                </div>
+                <span class="action-title">WORKFLOW OPTIMIZATION</span>
+                <span class="action-num">.04</span>
+              </div>
+              <div class="pill-popout-desc">
+                <p>Pinpointing bottlenecks in your daily operations and rebuilding them to be faster, simpler, and error-free.</p>
+              </div>
+            </div>
+
+            <div class="staggered-action-pill" tabindex="0">
+              <div class="pill-main-row">
+                <div class="action-icon-disc">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/></svg>
+                </div>
+                <span class="action-title">EXECUTIVE CLIENT OPS</span>
+                <span class="action-num">.05</span>
+              </div>
+              <div class="pill-popout-desc">
+                <p>Providing reliable virtual assistance and bilingual communication (English &amp; Mandarin) to keep your projects and clients on track.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
       </div>
     </section>
 
-    <!-- Ping Me / Contact Section -->
-    <section id="contact" class="section container">
-      <h2 class="section-title">Establish Communication</h2>
-      <p class="section-subtitle">Connect for automation engineering, agentic workflow architecture, or creative media collaboration.</p>
-
-      <div class="contact-channels">
-        <!-- LinkedIn -->
-        <a href="https://www.linkedin.com/in/eljhon-satsat/" target="_blank" rel="noopener noreferrer" class="channel-card linkedin">
-          <div class="channel-icon" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.2a1.64 1.64 0 0 0-1.64 1.63c0 .91.73 1.64 1.64 1.64s1.63-.73 1.63-1.64A1.64 1.64 0 0 0 7.83 6.2Z"/></svg>
-          </div>
-          <div class="channel-details">
-            <h3>LinkedIn</h3>
-            <p>Professional network &amp; architecture career updates</p>
-            <span class="badge-link">linkedin.com/in/eljhon-satsat ↗</span>
-          </div>
-        </a>
-
-        <!-- Instagram -->
-        <a href="https://www.instagram.com/st_tib/" target="_blank" rel="noopener noreferrer" class="channel-card instagram">
-          <div class="channel-icon" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-          </div>
-          <div class="channel-details">
-            <h3>Instagram</h3>
-            <p>Creative media, visuals, &amp; daily life in Taiwan</p>
-            <span class="badge-link">@st_tib ↗</span>
-          </div>
-        </a>
-
-        <!-- Facebook -->
-        <a href="https://www.facebook.com/eljhon.satsat.2025" target="_blank" rel="noopener noreferrer" class="channel-card facebook">
-          <div class="channel-icon" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-          </div>
-          <div class="channel-details">
-            <h3>Facebook</h3>
-            <p>Social connections &amp; general outreach</p>
-            <span class="badge-link">eljhon.satsat.2025 ↗</span>
-          </div>
-        </a>
+    <!-- SECTION 6: INFINITE MARQUEE & STRUCTURAL CONTACT FORM -->
+    <section id="contact" class="contact-structural-section">
+      
+      <!-- Continuous Infinitely Scrolling Marquee (Cre8tera Frame 34) -->
+      <div class="infinite-marquee-strip" aria-hidden="true">
+        <div class="marquee-track">
+          <span>CONTACT ELJHON STEVE (羅俊豪) — SAY HELLO — AUTOMATE YOUR WORKFLOWS — READY TO WORK TOGETHER? — GET IN TOUCH —</span>
+          <span>CONTACT ELJHON STEVE (羅俊豪) — SAY HELLO — AUTOMATE YOUR WORKFLOWS — READY TO WORK TOGETHER? — GET IN TOUCH —</span>
+        </div>
       </div>
 
-      <div class="quick-ping-box">
-        <p class="quick-ping-label">Need a direct ping or automation consultation?</p>
-        <button id="copyProfileBtn" class="primary-btn copy-btn" aria-label="Copy portfolio link">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-          <span id="copyBtnText">Copy Portfolio URL</span>
-        </button>
+      <div class="container contact-container">
+        
+        <div class="contact-header-wrap section-header-glass-card glass-text-card">
+          <span class="crop-corner c-tl" aria-hidden="true"></span>
+          <span class="crop-corner c-tr" aria-hidden="true"></span>
+          <span class="crop-corner c-bl" aria-hidden="true"></span>
+          <span class="crop-corner c-br" aria-hidden="true"></span>
+          <div class="section-badge-row">
+            <span class="floating-badge">DIRECT CHANNELS</span>
+          </div>
+          <h2 class="contact-title">Have a project in mind?</h2>
+          <p class="contact-sub">Connect for automation engineering, agentic systems, or creative collaboration.</p>
+        </div>
+
+        <!-- Full-Width Minimalist Structural Form with Glass Card Enclosure -->
+        <div class="contact-form-glass-card glass-text-card">
+          <span class="crop-corner c-tl" aria-hidden="true"></span>
+          <span class="crop-corner c-tr" aria-hidden="true"></span>
+          <span class="crop-corner c-bl" aria-hidden="true"></span>
+          <span class="crop-corner c-br" aria-hidden="true"></span>
+          <form class="structural-form" id="contactForm">
+          
+          <div class="structural-field-row">
+            <span class="grid-cross-node c-left">+</span>
+            <span class="grid-cross-node c-right">+</span>
+            <label for="formName" class="structural-label">Name.</label>
+            <input type="text" id="formName" name="name" class="structural-input" placeholder="Enter your name" required>
+          </div>
+
+          <div class="structural-field-row">
+            <span class="grid-cross-node c-left">+</span>
+            <span class="grid-cross-node c-right">+</span>
+            <label for="formEmail" class="structural-label">Email.</label>
+            <input type="email" id="formEmail" name="email" class="structural-input" placeholder="name@domain.com" required>
+          </div>
+
+          <div class="structural-field-row">
+            <span class="grid-cross-node c-left">+</span>
+            <span class="grid-cross-node c-right">+</span>
+            <label for="formChannel" class="structural-label">Channel.</label>
+            <input type="text" id="formChannel" name="channel" class="structural-input" placeholder="LinkedIn, Instagram, or Phone">
+          </div>
+
+          <div class="structural-field-row">
+            <span class="grid-cross-node c-left">+</span>
+            <span class="grid-cross-node c-right">+</span>
+            <label for="formScope" class="structural-label">Project Scope.</label>
+            <input type="text" id="formScope" name="scope" class="structural-input" placeholder="AI Automation, Video Production, System Ops, Consultation">
+          </div>
+
+          <div class="structural-field-row message-row">
+            <span class="grid-cross-node c-left">+</span>
+            <span class="grid-cross-node c-right">+</span>
+            <label for="formMessage" class="structural-label">Message.</label>
+            <textarea id="formMessage" name="message" class="structural-textarea" rows="3" placeholder="Describe your workflow needs or collaboration goals"></textarea>
+          </div>
+
+          <div class="structural-submit-bar">
+            <button type="submit" class="submit-action-pill" id="submitBtn">
+              <span>Initiate Ping</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </form>
+        </div>
+
+        <!-- Social Connection Cards -->
+        <div class="social-channels-bar">
+          <a href="https://www.linkedin.com/in/eljhon-satsat/" target="_blank" rel="noopener noreferrer" class="social-glass-pill">
+            <span class="social-icon">IN</span>
+            <span class="social-label">LinkedIn</span>
+            <span class="social-arrow">↗</span>
+          </a>
+
+          <a href="https://www.instagram.com/st_tib/" target="_blank" rel="noopener noreferrer" class="social-glass-pill">
+            <span class="social-icon">IG</span>
+            <span class="social-label">@st_tib</span>
+            <span class="social-arrow">↗</span>
+          </a>
+
+          <a href="https://www.facebook.com/eljhon.satsat.2025" target="_blank" rel="noopener noreferrer" class="social-glass-pill">
+            <span class="social-icon">FB</span>
+            <span class="social-label">Facebook</span>
+            <span class="social-arrow">↗</span>
+          </a>
+
+          <button id="copyProfileBtn" class="social-glass-pill copy-trigger" aria-label="Copy website URL">
+            <span class="social-icon">⚡</span>
+            <span class="social-label" id="copyBtnText">Copy Portfolio Link</span>
+          </button>
+        </div>
+
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container footer-content">
-      <div class="footer-left">
-        <p class="code-font">&gt; system.exit(0) // Process completed cleanly</p>
-        <p class="copyright">© <span id="currentYear">2026</span> Junhao Luo (Ejhon). All rights reserved.</p>
+  <!-- SECTION 7: REFLECTIVE GLASS MEGA-FOOTER -->
+  <footer class="mega-site-footer" id="siteFooter">
+    <div class="container footer-top-grid">
+      
+      <!-- Footer Directory Left -->
+      <div class="footer-dir-col footer-glass-card glass-text-card">
+        <span class="crop-corner c-tl" aria-hidden="true"></span>
+        <span class="crop-corner c-tr" aria-hidden="true"></span>
+        <span class="crop-corner c-bl" aria-hidden="true"></span>
+        <span class="crop-corner c-br" aria-hidden="true"></span>
+        <span class="dir-title">Directory</span>
+        <ul class="dir-list">
+          <li><a href="#hero">· Home</a></li>
+          <li><a href="#checkpoint">· Degree Checkpoint</a></li>
+          <li><a href="#modules">· Core Modules</a></li>
+          <li><a href="#about">· Architect Profile</a></li>
+          <li><a href="#ecosystem">· Tech Ecosystem</a></li>
+          <li><a href="privacy.html">· Privacy Policy</a></li>
+        </ul>
       </div>
-      <div class="footer-right">
-        <span class="footer-badge">Taiwan • Feng Chia University</span>
-        <a href="#hero" class="back-to-top" aria-label="Back to top">↑ Top</a>
+
+      <div class="footer-dir-col footer-glass-card glass-text-card">
+        <span class="crop-corner c-tl" aria-hidden="true"></span>
+        <span class="crop-corner c-tr" aria-hidden="true"></span>
+        <span class="crop-corner c-bl" aria-hidden="true"></span>
+        <span class="crop-corner c-br" aria-hidden="true"></span>
+        <span class="dir-title">Affiliation</span>
+        <ul class="dir-list">
+          <li><span class="dim-text">Feng Chia University</span></li>
+          <li><span class="dim-text">Taichung, Taiwan</span></li>
+          <li><span class="dim-text">AI Tech &amp; Application</span></li>
+          <li><span class="dim-text">TOCFL B1 Certified</span></li>
+        </ul>
+      </div>
+
+      <!-- Quick Email Connect Right -->
+      <div class="footer-email-col footer-glass-card glass-text-card">
+        <span class="crop-corner c-tl" aria-hidden="true"></span>
+        <span class="crop-corner c-tr" aria-hidden="true"></span>
+        <span class="crop-corner c-bl" aria-hidden="true"></span>
+        <span class="crop-corner c-br" aria-hidden="true"></span>
+        <span class="dir-title">Direct Connection</span>
+        <p class="footer-email-desc">Reach out directly to Eljhon Steve (羅俊豪) for inquiries and consultations.</p>
+        <div class="footer-email-input-wrap">
+          <input type="email" id="footerEmailInput" placeholder="Enter your email" class="footer-email-input">
+          <button class="footer-subscribe-btn" id="footerConnectBtn">
+            <svg class="cursor-pill-icon" width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M4 0l16 12.279-6.951 1.17 4.325 8.817-3.596 1.734-4.35-8.879-5.428 5.242z"/></svg>
+            <span>Connect</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- The 3D Glass Mega Wordmark (Cre8tera Frame 35 Signature) -->
+    <div class="mega-wordmark-container" aria-hidden="true">
+      <div class="mega-wordmark-glow"></div>
+      <h2 class="mega-wordmark-text">ELJHON</h2>
+      <p class="mega-subline-text">ELJHON STEVE (羅俊豪) • AUTOMATION ARCHITECT &amp; AI ENGINEER</p>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="container footer-bottom-bar glass-bar">
+      <div class="bottom-left">
+        <p class="copyright-line">© <span id="currentYear">2026</span> Eljhon Steve (羅俊豪). All rights reserved.</p>
+      </div>
+
+      <!-- Centered Floating Back to Top Pill (Cre8tera Frame 34 & 35) -->
+      <div class="bottom-center">
+        <a href="#hero" class="back-to-top-pill" aria-label="Scroll back to top">
+          <span class="pill-dot"></span>
+          <span>Back to Top</span>
+        </a>
+      </div>
+
+      <div class="bottom-right">
+        <span class="location-stamp">Taichung, Taiwan</span>
       </div>
     </div>
   </footer>
 
-  <!-- Toast Notification Container -->
+  <!-- Toast Notification Box -->
   <div id="toast" class="toast-notification" role="status" aria-live="polite"></div>
 
-  <!-- Scripts -->
+  <!-- Main JavaScript File -->
   <script src="script.js"></script>
 </body>
 </html>

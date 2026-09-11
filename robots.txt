@@ -1,0 +1,10 @@
+# robots.txt for https://eljhon.me
+User-agent: *
+Allow: /
+Disallow: /scratch/
+Disallow: /motion-audits/
+Disallow: /live_captures/
+Disallow: /glass-captures/
+
+# Sitemap location
+Sitemap: https://eljhon.me/sitemap.xml

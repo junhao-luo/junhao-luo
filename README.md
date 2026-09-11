@@ -1,9 +1,9 @@
-### `> system.init("Ejhon")` 👋
+### `> system.init("Eljhon Steve (羅俊豪)")` 👋
 
 [![Eljhon-Steve-(1).png](https://i.postimg.cc/sgC0rV3J/Eljhon-Steve-(1).png)](https://postimg.cc/7fXN1rGC)
 
-**`[USER_PROFILE]`**
-Hello! I'm **Ejhon**. I am an automation architect and student at **Feng Chia University** in Taiwan, currently executing my Bachelor's Program of **Artificial Intelligence Technology and Application**. 🏫
+**`[PROFILE]`**
+Hello! I'm **Eljhon Steve (羅俊豪)**. I am an automation architect and student at **Feng Chia University** in Taiwan, currently pursuing my Bachelor's in **Artificial Intelligence Technology and Applications**. 🏫
 
 🎓 **Degree Checkpoint:**
 `> Model Training Progress: Epoch 1/8 [█░░░░░░░] 12.5% | loss: optimizing...`
