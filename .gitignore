@@ -1,0 +1,15 @@
+# Agent skills & lockfiles
+.agents/
+skills-lock.json
+
+# Local Python cache & virtual environments
+__pycache__/
+*.py[cod]
+.venv/
+env/
+venv/
+
+# Operating System files
+.DS_Store
+Thumbs.db
+

@@ -54,15 +54,15 @@ function initProgressObserver() {
   const progressFill = document.querySelector('.progress-fill');
   if (!progressFill) return;
 
-  // Reset to 0 initially
-  progressFill.style.width = '0%';
+  // Reset scaleX initially
+  progressFill.style.transform = 'scaleX(0)';
 
   const observer = new IntersectionObserver(
     (entries, observerInstance) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           setTimeout(() => {
-            progressFill.style.width = '12.5%';
+            progressFill.style.transform = 'scaleX(0.125)';
           }, 250);
           observerInstance.unobserve(entry.target);
         }
