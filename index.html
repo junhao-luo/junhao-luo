@@ -33,7 +33,7 @@
   <script type="module" src="orb-background.js"></script>
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="style.css?v=20261008-prism">
+  <link rel="stylesheet" href="style.css?v=20261008-education">
   <!-- JSON-LD Local Business & Professional Schema -->
   <script type="application/ld+json">
   {
@@ -282,11 +282,17 @@
             <span class="floating-badge">FENG CHIA UNIVERSITY • AI DEGREE</span>
           </div>
           <h2 class="horizon-headline">
-            Learning how AI works.
+            My AI degree plan.
           </h2>
           <p class="section-main-sub">
-            My four-year study plan at Feng Chia University, from Python fundamentals to a final capstone project.
+            My course plan at Feng Chia University covers AI, software development and industrial applications across academic years 115–118 (2026–2030). Courses below are planned, not a record of completed credits.
           </p>
+        </div>
+
+        <div class="degree-requirements" aria-label="Degree requirements">
+          <p><strong>Graduation requirement: 128 credits.</strong> General education core: 12; general education electives: 12; required courses: 62; electives: 42.</p>
+          <p><strong>Additional requirement:</strong> at least 2 credits of digital self-directed learning proof. My planned course is <em>Databases and SQL for Data Science with Python</em> on Coursera.</p>
+          <p>The plan includes computer vision and natural language processing to meet the requirement to take at least two of the four specified AI electives. Internship credits count toward graduation up to a maximum of 6. At least three courses must be taken within one field.</p>
         </div>
 
         <!-- Interactive Degree Progress Card -->
@@ -294,7 +300,7 @@
           <div class="checkpoint-card-bar">
             <div class="card-bar-left">
               <span class="terminal-dot green"></span>
-              <span class="code-mono">Study plan</span>
+              <span class="code-mono">128-credit degree + digital learning proof</span>
             </div>
             <div class="card-bar-right">
               <span class="epoch-chip">Year 1 of 4</span>
@@ -304,19 +310,19 @@
           <div class="checkpoint-card-body">
             <div class="progress-metric-header">
               <div class="metric-title-wrap">
-                <span class="metric-label">Degree Progress:</span>
-                <span class="code-mono cyan-highlight">&gt; Year 1: 12.5% Complete</span>
+                <span class="metric-label">Current Semester:</span>
+                <span class="code-mono cyan-highlight">&gt; 115-1 • Year 1, Semester 1</span>
               </div>
               <div class="metric-loss-wrap">
                 <span class="pulsing-live-dot" aria-hidden="true"></span>
-                <span class="code-mono">Status: <strong class="green-text">Studying AI</strong></span>
+                <span class="code-mono">Timeline: <strong class="green-text">Semester 1 of 8</strong></span>
               </div>
             </div>
 
             <!-- Degree Progress Bar with Hover Tooltip Bubble (Strict user requirement) -->
             <div class="progress-track-wrapper">
-              <div class="progress-bubble" id="progressBubble" aria-hidden="true">12.5%</div>
-              <div class="progress-track" id="degreeProgressTrack" role="progressbar" aria-valuenow="12.5" aria-valuemin="0" aria-valuemax="100" aria-label="Degree progress: 12.5% complete" tabindex="0">
+              <div class="progress-bubble" id="progressBubble" aria-hidden="true">Semester 1 of 8</div>
+              <div class="progress-track" id="degreeProgressTrack" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="8" aria-valuetext="Current semester: 115-1, semester 1 of 8; not earned-credit progress" aria-label="Study timeline" tabindex="0">
                 <div class="progress-fill" id="degreeProgressFill"></div>
               </div>
             </div>
@@ -336,7 +342,7 @@
             <div class="milestones-row">
 
               <!-- Milestone 1: Current Active Year -->
-              <div class="milestone-box active epoch-node" tabindex="0" role="button" aria-label="Year 1: AI and Python basics, in progress. Degree progress: 12.5%.">
+              <div class="milestone-box active epoch-node" tabindex="0" role="group" data-semester="2" data-period="115-1 / 115-2" aria-label="Year 1 plan: programming, AI mathematics and databases">
                 <div class="milestone-laser-beam"></div>
                 <div class="milestone-top-row">
                   <div class="milestone-dot-wrap">
@@ -346,12 +352,37 @@
                   </div>
                   <span class="epoch-status-badge active-badge">
                     <span class="badge-pulse-beacon"></span>
-                    <span>ACTIVE • YEAR 1</span>
+                    <span>CURRENT • 115-1</span>
                   </span>
                 </div>
 
-                <h3 class="milestone-title">Year 1 (12.5%)</h3>
-                <p class="milestone-sub">AI &amp; Python Basics</p>
+                <h3 class="milestone-title">Year 1 · 115</h3>
+                <p class="milestone-sub">Programming, AI Mathematics &amp; Databases</p>
+                <details class="semester-plan">
+                  <summary>View semester courses</summary>
+                  <h4>115-1 · Planned courses</h4>
+                  <ul lang="zh-Hant">
+                    <li>體育(一)</li>
+                    <li>中文思辨與表達(一)</li>
+                    <li>大學基礎英文(一)</li>
+                    <li>電腦科學概論</li>
+                    <li>產業科技創新與AI應用專題</li>
+                    <li>AI基礎數學(一)及實習</li>
+                    <li>基礎程式設計(一)及實習</li>
+                    <li>鋼琴音樂萬花筒</li>
+                  </ul>
+                  <h4>115-2 · Planned courses</h4>
+                  <ul lang="zh-Hant">
+                    <li>體育(二)</li>
+                    <li>中文思辨與表達(二)</li>
+                    <li>大學基礎英文(二)</li>
+                    <li>AI基礎數學(一)(二)及實習</li>
+                    <li>基礎程式設計(一)(二)及實習</li>
+                    <li>人工智慧導論（台積電學分學程）</li>
+                    <li>資料庫導論</li>
+                    <li>通識選修（待選）</li>
+                  </ul>
+                </details>
 
                 <!-- Dynamic Live Loss Curve Sparkline -->
                 <div class="epoch-mini-telemetry">
@@ -363,14 +394,14 @@
                   </div>
                   <div class="telemetry-stat-row">
                     <span class="code-mono stat-label">STATUS:</span>
-                    <span class="code-mono stat-val cyan-text">ON TRACK</span>
-                    <span class="stat-trend green-text">In progress</span>
+                    <span class="code-mono stat-val cyan-text">115-1</span>
+                    <span class="stat-trend green-text">Current term</span>
                   </div>
                 </div>
               </div>
 
               <!-- Milestone 2: Machine Learning & Agents -->
-              <div class="milestone-box epoch-node" tabindex="0" role="button" aria-label="Year 2: machine learning and AI agents, planned">
+              <div class="milestone-box epoch-node" tabindex="0" role="group" data-semester="4" data-period="116-1 / 116-2" aria-label="Year 2 plan: machine learning, multimodal AI and AI agents">
                 <div class="milestone-laser-beam"></div>
                 <div class="milestone-top-row">
                   <div class="milestone-dot-wrap">
@@ -384,8 +415,30 @@
                   </span>
                 </div>
 
-                <h3 class="milestone-title">Year 2</h3>
-                <p class="milestone-sub">Machine Learning &amp; AI Agents</p>
+                <h3 class="milestone-title">Year 2 · 116</h3>
+                <p class="milestone-sub">Machine Learning, Multimodal AI &amp; Agents</p>
+                <details class="semester-plan">
+                  <summary>View semester courses</summary>
+                  <h4>116-1 · Planned courses</h4>
+                  <ul lang="zh-Hant">
+                    <li>大學精進英文(一)</li>
+                    <li>機率與統計</li>
+                    <li>資料結構與演算法及實習</li>
+                    <li>智慧聯網</li>
+                    <li>企業分析與系統思考</li>
+                    <li>生成式AI應用：多模態模型應用</li>
+                  </ul>
+                  <h4>116-2 · Planned courses</h4>
+                  <ul lang="zh-Hant">
+                    <li>大學精進英文(二)</li>
+                    <li>大數據分析與應用</li>
+                    <li>雲端計算與資安策略應用</li>
+                    <li>機器學習</li>
+                    <li>AI專案管理規劃與協作</li>
+                    <li>生成式AI應用：AI agent 開發與實作</li>
+                    <li>AI專題研討</li>
+                  </ul>
+                </details>
 
                 <!-- Dynamic Animated Synapse Nodes -->
                 <div class="epoch-mini-telemetry">
@@ -398,14 +451,14 @@
                   </div>
                   <div class="telemetry-stat-row">
                     <span class="code-mono stat-label">FOCUS:</span>
-                    <span class="code-mono stat-val blue-text">DEEP LEARNING</span>
+                    <span class="code-mono stat-val blue-text">MACHINE LEARNING</span>
                     <span class="code-mono stat-sub dim-text">Year 2</span>
                   </div>
                 </div>
               </div>
 
               <!-- Milestone 3: System Architecture -->
-              <div class="milestone-box epoch-node" tabindex="0" role="button" aria-label="Year 3: AI system design, planned">
+              <div class="milestone-box epoch-node" tabindex="0" role="group" data-semester="6" data-period="117-1 / 117-2" aria-label="Year 3 plan: deep learning, computer vision, natural language processing and software development">
                 <div class="milestone-laser-beam"></div>
                 <div class="milestone-top-row">
                   <div class="milestone-dot-wrap">
@@ -419,8 +472,31 @@
                   </span>
                 </div>
 
-                <h3 class="milestone-title">Year 3</h3>
-                <p class="milestone-sub">AI System Design</p>
+                <h3 class="milestone-title">Year 3 · 117</h3>
+                <p class="milestone-sub">Advanced AI &amp; Software Development</p>
+                <details class="semester-plan">
+                  <summary>View semester courses</summary>
+                  <h4>117-1 · Planned courses</h4>
+                  <ul lang="zh-Hant">
+                    <li>資料探勘</li>
+                    <li>深度學習</li>
+                    <li>進階AI創新應用專題</li>
+                    <li>智能化載具實作與應用</li>
+                    <li>圖像識別</li>
+                    <li>資料結構及實習（資訊科技）</li>
+                    <li>物件導向設計及實習（資訊科技）</li>
+                  </ul>
+                  <h4>117-2 · Planned courses</h4>
+                  <ul lang="zh-Hant">
+                    <li>智慧決策支援系統</li>
+                    <li>產業實務AI創新應用專題</li>
+                    <li>自然語言處理</li>
+                    <li>線性代數</li>
+                    <li>資料庫系統</li>
+                    <li>行動應用程式開發</li>
+                    <li>Web程式設計</li>
+                  </ul>
+                </details>
 
                 <!-- Dynamic Multi-Agent Cluster Telemetry -->
                 <div class="epoch-mini-telemetry">
@@ -433,14 +509,14 @@
                   </div>
                   <div class="telemetry-stat-row">
                     <span class="code-mono stat-label">FOCUS:</span>
-                    <span class="code-mono stat-val purple-text">AI SYSTEMS</span>
+                    <span class="code-mono stat-val purple-text">VISION &amp; NLP</span>
                     <span class="code-mono stat-sub dim-text">Year 3</span>
                   </div>
                 </div>
               </div>
 
               <!-- Milestone 4: Graduation & Capstone -->
-              <div class="milestone-box epoch-node epoch-target" tabindex="0" role="button" aria-label="Year 4: capstone project and graduation, planned">
+              <div class="milestone-box epoch-node epoch-target" tabindex="0" role="group" data-semester="8" data-period="118-1 / 118-2" aria-label="Year 4 plan: industrial IoT, software engineering, smart manufacturing and internships">
                 <div class="milestone-laser-beam"></div>
                 <div class="milestone-top-row">
                   <div class="milestone-dot-wrap">
@@ -454,8 +530,24 @@
                   </span>
                 </div>
 
-                <h3 class="milestone-title">Year 4</h3>
-                <p class="milestone-sub">Capstone &amp; Graduation</p>
+                <h3 class="milestone-title">Year 4 · 118</h3>
+                <p class="milestone-sub">Industrial Applications &amp; Internships</p>
+                <details class="semester-plan">
+                  <summary>View semester courses</summary>
+                  <h4>118-1 · Planned courses</h4>
+                  <ul lang="zh-Hant">
+                    <li>智慧感測與工業聯網實務（台積電）</li>
+                    <li>軟體工程開發實務（資訊科技）</li>
+                    <li>通識選修（待選，兩門）</li>
+                  </ul>
+                  <h4>118-2 · Planned courses</h4>
+                  <ul lang="zh-Hant">
+                    <li>校外專業實習(一)</li>
+                    <li>校外專業實習(二)</li>
+                    <li>智慧製造（台積電）</li>
+                    <li>通識選修（待選，兩門）</li>
+                  </ul>
+                </details>
 
                 <!-- Dynamic Convergence Target Horizon -->
                 <div class="epoch-mini-telemetry">
@@ -465,8 +557,8 @@
                   </div>
                   <div class="telemetry-stat-row">
                     <span class="code-mono stat-label">GOAL:</span>
-                    <span class="code-mono stat-val gold-text">GRADUATION</span>
-                    <span class="code-mono stat-sub dim-text">100%</span>
+                    <span class="code-mono stat-val gold-text">INTERNSHIPS</span>
+                    <span class="code-mono stat-sub dim-text">Year 4</span>
                   </div>
                 </div>
               </div>
@@ -1337,6 +1429,6 @@
   <div id="toast" class="toast-notification" role="status" aria-live="polite"></div>
 
   <!-- Main JavaScript File -->
-  <script src="script.js?v=20261008-prism"></script>
+  <script src="script.js?v=20261008-education"></script>
 </body>
 </html>

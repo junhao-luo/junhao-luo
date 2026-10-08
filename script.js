@@ -4,7 +4,7 @@
  * 1. Fluid Aurora Light Ribbons (HTML5 Canvas Animation)
  * 2. Kinetic Tumbler Box Cycling Cursive Words
  * 3. Persistent 0-100 Viewport Scroll Slider with Scrubbing
- * 4. Degree Checkpoint 12.5% Progress Animation & Hover Bubble
+ * 4. Study Timeline & Planned Semester Previews
  * 5. Menu Drawer & Smooth Section Navigation
  * 6. Quick Ping / URL Clipboard Toast Feedback
  * 7. Contact Form Simulation & Footer Email Handling
@@ -179,84 +179,61 @@ function initStickySlider() {
 }
 
 /* ==========================================================================
-   4. DEGREE CHECKPOINT 12.5% PROGRESS ANIMATION, HOVER BUBBLE & DYNAMIC EPOCHS
+   4. STUDY TIMELINE & PLANNED SEMESTER PREVIEWS
    ========================================================================== */
 function initDegreeCheckpoint() {
   const fill = document.getElementById('degreeProgressFill');
-  const trackWrapper = document.querySelector('.progress-track-wrapper');
+  const track = document.getElementById('degreeProgressTrack');
   const bubble = document.getElementById('progressBubble');
   const epochNodes = document.querySelectorAll('.milestone-box.epoch-node');
-  const epoch1Loss = document.getElementById('epoch1Loss');
+  if (!fill || !track) return;
 
-  if (!fill) return;
+  const currentSemester = Number(track.getAttribute('aria-valuenow'));
+  const semesterCount = Number(track.getAttribute('aria-valuemax'));
+  const currentDescription = track.getAttribute('aria-valuetext');
+  const updateTimeline = (semester, planned = false) => {
+    const percent = semester / semesterCount * 100;
+    fill.style.width = `${percent}%`;
+    track.setAttribute('aria-valuenow', String(semester));
+    track.setAttribute('aria-valuetext', planned
+      ? `Planned semester ${semester} of ${semesterCount}; not earned-credit progress`
+      : currentDescription);
+    if (bubble) {
+      bubble.textContent = `${planned ? 'Planned: ' : ''}${semester} of ${semesterCount} semesters`;
+      bubble.style.left = `clamp(80px, ${percent}%, calc(100% - 80px))`;
+    }
+  };
+  updateTimeline(currentSemester);
 
-  // Initialize width to 0
-  fill.style.width = '0%';
-
-  const observer = new IntersectionObserver((entries, obs) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => {
-          fill.style.width = '12.5%';
-        }, 300);
-        obs.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.25 });
-
-  const section = document.getElementById('checkpoint');
-  if (section) {
-    observer.observe(section);
-  }
-
-  // 1. Dynamic Epoch 1 SGD Loss fluctuations
-  if (epoch1Loss) {
-    let currentLoss = 0.3421;
-    setInterval(() => {
-      const delta = (Math.random() - 0.52) * 0.003;
-      currentLoss = Math.max(0.338, Math.min(0.348, currentLoss + delta));
-      epoch1Loss.textContent = currentLoss.toFixed(4);
-    }, 1800);
-  }
-
-  // 2. Interactive Milestone Epoch Node Hover Preview
-  const epochTargets = [
-    { percent: 12.5, label: '12.5%' },
-    { percent: 50.0, label: '50.0% (Planned milestone)' },
-    { percent: 87.5, label: '87.5% (Planned milestone)' },
-    { percent: 100.0, label: '100.0% (Graduation goal)' }
-  ];
-
-  epochNodes.forEach((node, idx) => {
-    const target = epochTargets[idx];
-    if (!target) return;
-
-    node.addEventListener('mouseenter', () => {
-      fill.style.width = `${target.percent}%`;
+  epochNodes.forEach(node => {
+    const semester = Number(node.dataset.semester);
+    if (!semester) return;
+    const preview = () => {
+      updateTimeline(semester, true);
       if (bubble) {
-        bubble.textContent = target.label;
-        bubble.style.left = `${target.percent}%`;
         bubble.style.opacity = '1';
         bubble.style.visibility = 'visible';
         bubble.style.transform = 'translateX(-50%) translateY(-2px)';
       }
-    });
-
-    node.addEventListener('mouseleave', () => {
-      fill.style.width = '12.5%';
+    };
+    const restore = () => {
+      updateTimeline(currentSemester);
       if (bubble) {
-        bubble.textContent = '12.5%';
-        bubble.style.left = '12.5%';
         bubble.style.opacity = '';
         bubble.style.visibility = '';
         bubble.style.transform = '';
       }
-    });
-
-    node.addEventListener('click', () => {
-      showToast(`Study milestone: ${target.label}.`);
+    };
+    node.addEventListener('mouseenter', preview);
+    node.addEventListener('mouseleave', restore);
+    node.addEventListener('focus', preview);
+    node.addEventListener('blur', restore);
+    node.addEventListener('click', (event) => {
+      if (event.target.closest('details')) return;
+      showToast(`Planned academic terms: ${node.dataset.period}. Open the semester courses for details.`);
     });
     node.addEventListener('keydown', (event) => {
+      if (event.target !== node) return;
       if (event.key === 'Enter' || event.key === ' ') {
         event.preventDefault();
         node.click();

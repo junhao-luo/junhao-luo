@@ -928,7 +928,7 @@ footer,
 
 /* Hover over the progress track reveals the floating text bubble */
 .progress-track-wrapper:hover .progress-bubble,
-.progress-track:focus .progress-bubble {
+.progress-track-wrapper:focus-within .progress-bubble {
   opacity: 1;
   visibility: visible;
   transform: translateX(-50%) translateY(-2px);
@@ -3963,3 +3963,28 @@ p { text-wrap: pretty; }
   .tumbler-prism { animation: none; }
   .scroll-down-hint { animation: none; }
 }
+
+/* Education: requirements and the student's semester-by-semester plan. */
+.degree-requirements {
+  max-width: 860px;
+  margin-bottom: 36px;
+  color: var(--text-light);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+.degree-requirements p + p { margin-top: 12px; }
+.degree-requirements strong { color: var(--text-pure); font-weight: 600; }
+.semester-plan { margin-block: 16px; font-size: 0.9375rem; }
+.semester-plan summary {
+  color: var(--neon-cyan);
+  cursor: pointer;
+  min-height: 44px;
+  padding-block: 10px;
+  border-top: 1px solid var(--border-glass);
+}
+.semester-plan summary:focus-visible { outline: var(--focus-ring); outline-offset: 3px; }
+.semester-plan h4 { margin-block: 20px 10px; font-size: 0.875rem; font-weight: 600; }
+.semester-plan ul { padding-left: 20px; color: var(--text-light); line-height: 1.8; }
+.semester-plan li + li { margin-top: 6px; }
+.checkpoint-card-bar { gap: 16px; flex-wrap: wrap; }
+.checkpoint-card-bar .code-mono { overflow-wrap: anywhere; }
