@@ -71,29 +71,22 @@ function initViewportAnimationCulling() {
    2. KINETIC TUMBLER BOX (HERO ACCENT WORD CYCLING)
    ========================================================================== */
 function initTumblerBox() {
-  const words = document.querySelectorAll('.tumbler-word');
-  if (!words.length) return;
+  const box = document.getElementById('tumblerBox');
+  if (!box) return;
 
-  let currentIndex = 0;
-  const cycleInterval = 2800; // ms
-
-  const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
-  // The visual cycle is decorative; expose one stable, descriptive heading.
-  words.forEach(word => word.setAttribute('aria-hidden', 'true'));
-  setInterval(() => {
-    if (motionPreference.matches || document.hidden) return;
-    const currentWord = words[currentIndex];
-    currentWord.classList.remove('active');
-    currentWord.classList.add('exit');
-
-    setTimeout(() => {
-      currentWord.classList.remove('exit');
-    }, 450);
-
-    currentIndex = (currentIndex + 1) % words.length;
-    const nextWord = words[currentIndex];
-    nextWord.classList.add('active');
-  }, cycleInterval);
+  let inView = true;
+  const updatePlayback = () => {
+    box.classList.toggle('is-paused', document.hidden || !inView);
+  };
+  document.addEventListener('visibilitychange', updatePlayback);
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(([entry]) => {
+      inView = entry.isIntersecting;
+      updatePlayback();
+    });
+    observer.observe(box);
+  }
+  updatePlayback();
 }
 
 /* ==========================================================================
