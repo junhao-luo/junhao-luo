@@ -1,41 +1,46 @@
-### `> system.init("Eljhon Steve (羅俊豪)")` 👋
+# Eljhon Steve (羅俊豪)
 
-[![Eljhon-Steve-(1).png](https://i.postimg.cc/sgC0rV3J/Eljhon-Steve-(1).png)](https://postimg.cc/7fXN1rGC)
+I’m an AI student at **Feng Chia University** in Taichung, Taiwan. I build workflows that connect business tools and use AI to help with repetitive tasks. I also work on video editing, graphic design and freelance virtual assistance.
 
-**`[PROFILE]`**
-Hello! I'm **Eljhon Steve (羅俊豪)**. I am an automation architect and student at **Feng Chia University** in Taiwan, currently pursuing my Bachelor's in **Artificial Intelligence Technology and Applications**. 🏫
+**[Visit my portfolio → eljhon.me](https://eljhon.me/)**
 
-🎓 **Degree Checkpoint:**
-`> Model Training Progress: Epoch 1/8 [█░░░░░░░] 12.5% | loss: optimizing...`
+My portfolio covers my services, the tools I use and my semester-by-semester degree plan. You can read it in English or 繁體中文.
 
-My core processing power goes toward **AI Automation** 🤖 and building agentic workflows, but my neural network is multimodal—I also output creative deliverables through **video editing** 🎬 and **graphic design** 🎨. I'm currently deploying these modules as a Freelance Virtual Assistant.
+## What I work on
 
-**`[CORE_MODULES]`**
-AI Automation | Video Editing | Graphic Design | Virtual Assistance
+- **AI automation:** connect apps with n8n, Make, Zapier, APIs and webhooks; use AI assistants for tasks that involve text.
+- **Video and design:** edit footage, create motion graphics and design brand visuals or interface mockups.
+- **Operations support:** organize project tasks, help with daily administration and support client communication.
+- **Python:** develop custom scripts and build my programming skills through coursework and personal projects.
 
-**`[TECH_STACK]`**
-<p align="left">
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
-  <img src="https://img.shields.io/badge/n8n-FF6D5A?style=for-the-badge&logo=n8n&logoColor=white" alt="n8n"/>
-  <img src="https://img.shields.io/badge/Make-161616?style=for-the-badge&logo=make&logoColor=white" alt="Make"/>
-  <img src="https://img.shields.io/badge/Zapier-FF4A00?style=for-the-badge&logo=zapier&logoColor=white" alt="Zapier"/>
-  <img src="https://img.shields.io/badge/Claude%20Code-D97757?style=for-the-badge&logo=anthropic&logoColor=white" alt="Claude Code"/>
-  <img src="https://img.shields.io/badge/OpenAI%20Codex-412991?style=for-the-badge&logo=openai&logoColor=white" alt="OpenAI Codex"/>
-  <img src="https://img.shields.io/badge/Google%20Antigravity-4285F4?style=for-the-badge&logo=google&logoColor=white" alt="Google Antigravity"/>
-</p>
+## My studies
 
-**`[CURRENT_STATE]`**
-*   ⚙️ **Active Process:** Compiling my **Personal Portfolio Website**
-*   🧠 **Training Data:** Ingesting **Python** syntax and libraries
-*   🗣️ **NLP Capabilities:** Processing 4 human languages (including **Mandarin** at a TOCFL B1 level! 🇹🇼)
-*   📫 **Ping Me:** [**LinkedIn**](https://www.linkedin.com/in/eljhon-satsat/) | [**Instagram**](https://www.instagram.com/st_tib/) | [**Facebook**](https://www.facebook.com/eljhon.satsat.2025)
-*   🤖 **Pronouns:** **he/him**
+I’m pursuing a bachelor’s degree in **Artificial Intelligence Technology and Applications**. My four-year plan runs through academic years 115–118 (2026–2030):
 
-<p align="left">
-  <a href="https://www.linkedin.com/in/eljhon-satsat/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
-  <a href="https://www.instagram.com/st_tib/"><img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram"/></a>
-  <a href="https://www.facebook.com/eljhon.satsat.2025"><img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white" alt="Facebook"/></a>
-</p>
+| Year | Planned focus |
+| --- | --- |
+| 1 | Programming, AI mathematics and databases |
+| 2 | Machine learning, multimodal AI and AI agents |
+| 3 | Deep learning, computer vision, natural language processing and software development |
+| 4 | Industrial IoT, software engineering, smart manufacturing and internships |
 
-## Build Instructions
-Run `python generate_sitemap.py` to regenerate `sitemap.xml` before deploying the site.
+These are planned courses, not a record of earned credits. The degree requires 128 credits, with a separate requirement for digital self-directed learning proof. My planned digital course is **Databases and SQL for Data Science with Python** on Coursera.
+
+## Tools I use
+
+Python · n8n · Make · Zapier · Claude Code · OpenAI Codex · Google Antigravity
+
+I choose tools around the task: scripts for custom logic, automation platforms for app connections and AI models for language-based work. AI output needs review before it is used.
+
+## Languages and collaboration
+
+I use English, Tagalog and Filipino, and have **TOCFL B1 certification in Mandarin Chinese**. I can support communication between English- and Mandarin-speaking teams.
+
+I’m open to freelance projects involving automation, video, design or virtual assistance. Send me a description of what you need, your goals and your timeline through one of the channels below. We can discuss the scope and agree on a schedule.
+
+- [Portfolio](https://eljhon.me/)
+- [LinkedIn](https://www.linkedin.com/in/eljhon-satsat/)
+- [Instagram · @st_tib](https://www.instagram.com/st_tib/)
+- [Facebook](https://www.facebook.com/eljhon.satsat.2025)
+
+Based in **Taichung, Taiwan** · Pronouns: **he/him**

@@ -27,6 +27,11 @@ document.addEventListener('DOMContentLoaded', () => {
   handleUrlParams();
 });
 
+const translate = text => window.portfolioI18n?.t(text) || text;
+const localized = (en, zh, values) => window.portfolioI18n
+  ? window.portfolioI18n.interpolate(en, zh, values)
+  : en.replace(/\{(\w+)\}/g, (_, key) => values[key]);
+
 function handleUrlParams() {
   const params = new URLSearchParams(window.location.search);
   const scrollTarget = params.get('scroll');
@@ -195,15 +200,20 @@ function initDegreeCheckpoint() {
     const percent = semester / semesterCount * 100;
     fill.style.width = `${percent}%`;
     track.setAttribute('aria-valuenow', String(semester));
-    track.setAttribute('aria-valuetext', planned
-      ? `Planned semester ${semester} of ${semesterCount}; not earned-credit progress`
-      : currentDescription);
+    track.setAttribute('aria-valuetext', localized(
+      planned ? 'Planned semester {semester} of {count}; not earned-credit progress' : currentDescription,
+      planned ? '預定學期：第 {semester} 學期，共 {count} 學期；非已取得學分進度' : '目前學期：115-1，八個學期中的第一學期；非已取得學分進度',
+      {semester, count: semesterCount}));
     if (bubble) {
-      bubble.textContent = `${planned ? 'Planned: ' : ''}${semester} of ${semesterCount} semesters`;
+      bubble.textContent = localized(
+        `${planned ? 'Planned: ' : ''}{semester} of {count} semesters`,
+        `${planned ? '預定：' : ''}第 {semester}／{count} 學期`,
+        {semester, count: semesterCount});
       bubble.style.left = `clamp(80px, ${percent}%, calc(100% - 80px))`;
     }
   };
   updateTimeline(currentSemester);
+  document.addEventListener('portfolio-language-change', () => updateTimeline(currentSemester));
 
   epochNodes.forEach(node => {
     const semester = Number(node.dataset.semester);
@@ -230,7 +240,7 @@ function initDegreeCheckpoint() {
     node.addEventListener('blur', restore);
     node.addEventListener('click', (event) => {
       if (event.target.closest('details')) return;
-      showToast(`Planned academic terms: ${node.dataset.period}. Open the semester courses for details.`);
+      showToast(localized('Planned academic terms: {period}. Open the semester courses for details.', '預定學期：{period}。請展開各學期課程以查看詳細資訊。', {period: node.dataset.period}));
     });
     node.addEventListener('keydown', (event) => {
       if (event.target !== node) return;
@@ -310,14 +320,13 @@ function initCopyButton() {
 
       showToast('Site link copied to your clipboard.');
       if (copyBtnText) {
-        const orig = copyBtnText.textContent;
-        copyBtnText.textContent = 'Link Copied';
+        copyBtnText.textContent = translate('Link Copied');
         setTimeout(() => {
-          copyBtnText.textContent = orig;
+          copyBtnText.textContent = translate('Copy Site Link');
         }, 2000);
       }
     } catch (err) {
-      showToast('Copy this site link: ' + window.location.href);
+      showToast(localized('Copy this site link: {url}', '請複製此網站連結：{url}', {url: window.location.href}));
     }
   });
 }
@@ -326,7 +335,7 @@ function showToast(msg) {
   const toast = document.getElementById('toast');
   if (!toast) return;
 
-  toast.textContent = msg;
+  toast.textContent = translate(msg);
   toast.classList.add('show');
 
   setTimeout(() => {
@@ -348,14 +357,14 @@ function initContactForms() {
 
       if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.textContent = 'Preparing Preview...';
+        submitBtn.textContent = translate('Preparing Preview...');
       }
 
       setTimeout(() => {
-        showToast(`Thanks, ${name || 'there'}. This is a form preview; your message was not sent. Please contact me through the social links.`);
+        showToast(localized('Thanks, {name}. This is a form preview; your message was not sent. Please contact me through the social links.', '謝謝你，{name}。此表單僅供預覽，訊息並未傳送。請透過社群連結聯絡我。', {name: name || (window.portfolioI18n?.locale === 'zh-Hant' ? '朋友' : 'there')}));
         if (submitBtn) {
           submitBtn.disabled = false;
-          submitBtn.innerHTML = `<span>Preview Inquiry</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>`;
+          submitBtn.innerHTML = `<span>${translate('Preview Inquiry')}</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>`;
         }
       }, 900);
     });
@@ -372,9 +381,14 @@ function initContactForms() {
         return;
       }
 
-      showToast(`Preview complete for ${email}. Your email was not sent or added to a mailing list.`);
+      showToast(localized('Preview complete for {email}. Your email was not sent or added to a mailing list.', '{email} 的預覽已完成。電子郵件並未傳送，也未加入訂閱名單。', {email}));
     });
   }
+  document.addEventListener('portfolio-language-change', () => {
+    if (submitBtn && !submitBtn.disabled) submitBtn.querySelector('span').textContent = translate('Preview Inquiry');
+    const copyLabel = document.getElementById('copyBtnText');
+    if (copyLabel) copyLabel.textContent = translate('Copy Site Link');
+  });
 }
 
 /* ==========================================================================

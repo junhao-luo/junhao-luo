@@ -3988,3 +3988,43 @@ p { text-wrap: pretty; }
 .semester-plan li + li { margin-top: 6px; }
 .checkpoint-card-bar { gap: 16px; flex-wrap: wrap; }
 .checkpoint-card-bar .code-mono { overflow-wrap: anywhere; }
+
+/* Language selection shares the header's control sizes and keyboard states. */
+.language-switcher { display: inline-flex; flex-shrink: 0; }
+.language-switcher select {
+  min-height: 44px;
+  max-width: 120px;
+  padding: 8px 10px;
+  font: 500 0.875rem var(--font-body);
+  color: var(--text-light);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+.language-switcher select:hover { border-color: var(--neon-cyan); }
+.language-switcher select:focus-visible { outline: var(--focus-ring); outline-offset: 3px; }
+.standalone-language { position: fixed; top: 16px; right: 20px; z-index: 1000; }
+html[lang="zh-Hant"] body { font-family: var(--font-body), 'PingFang TC', 'Microsoft JhengHei', sans-serif; }
+html[lang="zh-Hant"] .cursive-accent,
+html[lang="zh-Hant"] .cursive-script-badge { font-family: 'KaiTi', 'DFKai-SB', 'Microsoft JhengHei', serif; font-weight: 600; letter-spacing: 0; }
+/* Keep each face at the prism's half-height depth after scaling Chinese text. */
+html[lang="zh-Hant"] .tumbler-word { font-size: 0.7em; --tumbler-depth: calc(var(--tumbler-height) / 1.4); }
+html[lang="zh-Hant"] .badge-label-upper { letter-spacing: 0.025em; }
+@media (max-width: 600px) {
+  .header-inner { gap: 8px; }
+  .header-actions { gap: 8px; }
+  .nav-pill-menu { padding-inline: 10px; }
+  .try-demo-pill { padding-inline: 10px; }
+  .language-switcher select { max-width: 100px; padding-inline: 6px; font-size: 0.8125rem; }
+  .standalone-language { right: 16px; }
+}
+@media (max-width: 440px) {
+  .brand-logo .logo-symbol, .try-demo-pill .cursor-pill-icon { display: none; }
+  .brand-logo { font-size: 0.875rem; }
+  .nav-pill-menu, .try-demo-pill { font-size: 0.8125rem; }
+  .status-indicator-dot { width: 5px; height: 5px; }
+}
+@media (max-width: 360px) {
+  .header-inner { padding-inline: 8px; }
+}

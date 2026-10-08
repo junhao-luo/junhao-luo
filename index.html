@@ -33,7 +33,7 @@
   <script type="module" src="orb-background.js"></script>
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="style.css?v=20261008-education">
+  <link rel="stylesheet" href="style.css?v=20261008-language">
   <!-- JSON-LD Local Business & Professional Schema -->
   <script type="application/ld+json">
   {
@@ -169,13 +169,18 @@
 
       <!-- Right: Direct Actions -->
       <div class="header-actions">
-        <a href="#about" class="nav-ghost-link">· About</a>
         <a href="#contact" class="try-demo-pill">
           <svg class="cursor-pill-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M4 0l16 12.279-6.951 1.17 4.325 8.817-3.596 1.734-4.35-8.879-5.428 5.242z"/>
           </svg>
           <span>Contact Me</span>
         </a>
+        <label class="language-switcher" data-no-translate>
+          <select id="languageSelect" aria-label="Language / 語言">
+            <option value="en" lang="en">English</option>
+            <option value="zh-Hant" lang="zh-Hant">繁體中文</option>
+          </select>
+        </label>
       </div>
     </div>
 
@@ -1429,6 +1434,7 @@
   <div id="toast" class="toast-notification" role="status" aria-live="polite"></div>
 
   <!-- Main JavaScript File -->
-  <script src="script.js?v=20261008-education"></script>
+  <script src="i18n.js?v=20261008-language"></script>
+  <script src="script.js?v=20261008-language"></script>
 </body>
 </html>
