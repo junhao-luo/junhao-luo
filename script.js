@@ -240,7 +240,7 @@ function initDegreeCheckpoint() {
     node.addEventListener('blur', restore);
     node.addEventListener('click', (event) => {
       if (event.target.closest('details')) return;
-      showToast(localized('Planned academic terms: {period}. Open the semester courses for details.', '預定學期：{period}。請展開各學期課程以查看詳細資訊。', {period: node.dataset.period}));
+      showToast(localized('Planned academic terms: {period}.', '預定學期：{period}。', {period: node.dataset.period}));
     });
     node.addEventListener('keydown', (event) => {
       if (event.target !== node) return;

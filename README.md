@@ -4,7 +4,7 @@ I’m an AI student at **Feng Chia University** in Taichung, Taiwan. I build wor
 
 **[Visit my portfolio → eljhon.me](https://eljhon.me/)**
 
-My portfolio covers my services, the tools I use and my semester-by-semester degree plan. You can read it in English or 繁體中文.
+My portfolio covers my services, the tools I use and my four-year degree plan. You can read it in English or 繁體中文.
 
 ## What I work on
 
@@ -24,7 +24,7 @@ I’m pursuing a bachelor’s degree in **Artificial Intelligence Technology and
 | 3 | Deep learning, computer vision, natural language processing and software development |
 | 4 | Industrial IoT, software engineering, smart manufacturing and internships |
 
-These are planned courses, not a record of earned credits. The degree requires 128 credits, with a separate requirement for digital self-directed learning proof. My planned digital course is **Databases and SQL for Data Science with Python** on Coursera.
+These are planned areas of study, not a record of completed courses.
 
 ## Tools I use
 

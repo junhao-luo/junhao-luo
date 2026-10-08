@@ -33,15 +33,8 @@ Artificial Intelligence Technology & Applications	人工智慧技術與應用
 in Taichung, Taiwan, while developing skills in automation, AI agents and digital media.	，並在臺灣臺中持續學習自動化、AI 代理與數位媒體製作。
 FENG CHIA UNIVERSITY • AI DEGREE	逢甲大學 • 人工智慧學位
 My AI degree plan.	我的 AI 學習計畫。
-My course plan at Feng Chia University covers AI, software development and industrial applications across academic years 115–118 (2026–2030). Courses below are planned, not a record of completed credits.	我在逢甲大學的修課計畫涵蓋人工智慧、軟體開發與產業應用，安排於 115 至 118 學年度（2026–2030）。以下為預定課程，並非已取得學分的紀錄。
-Degree requirements	畢業要求
-Graduation requirement: 128 credits.	畢業學分要求：128 學分。
-General education core: 12; general education electives: 12; required courses: 62; electives: 42.	通識必修 12 學分、通識選修 12 學分、必修 62 學分、選修 42 學分。
-Additional requirement:	另須完成：
-at least 2 credits of digital self-directed learning proof. My planned course is	至少 2 學分的數位自主學習修課證明。我預計修習
-on Coursera.	（Coursera 平臺）。
-The plan includes computer vision and natural language processing to meet the requirement to take at least two of the four specified AI electives. Internship credits count toward graduation up to a maximum of 6. At least three courses must be taken within one field.	計畫包含圖像識別與自然語言處理，以符合指定四門 AI 選修課至少修習兩門的要求。實習課程最多採計 6 學分；另須在同一場域修習至少三門課程。
-128-credit degree + digital learning proof	128 學分學位＋數位自主學習證明
+My four-year plan at Feng Chia University covers AI, software development and industrial applications across academic years 115–118 (2026–2030).	我在逢甲大學的四年學習計畫涵蓋人工智慧、軟體開發與產業應用，安排於 115 至 118 學年度（2026–2030）。
+Four-year AI degree plan	四年 AI 學習計畫
 Year 1 of 4	四年計畫・第一年
 Current Semester:	目前學期：
 > 115-1 • Year 1, Semester 1	> 115-1 • 一年級上學期
@@ -52,7 +45,6 @@ Year 1 plan: programming, AI mathematics and databases	一年級計畫：程式�
 CURRENT • 115-1	目前學期 • 115-1
 Year 1 · 115	一年級 · 115 學年度
 Programming, AI Mathematics & Databases	程式設計、AI 數學與資料庫
-View semester courses	查看各學期課程
 STATUS:	狀態：
 Current term	目前學期
 Year 2 plan: machine learning, multimodal AI and AI agents	二年級計畫：機器學習、多模態 AI 與 AI 代理
@@ -278,9 +270,6 @@ Eljhon Steve (羅俊豪) | AI Automation & Creative Services	Eljhon Steve（羅�
 Eljhon Steve (羅俊豪) | AI Automation	Eljhon Steve（羅俊豪） | AI 自動化
 `.trim().split('\n').map(line => line.split('\t')));
 
-  for (const year of [115,116,117,118]) for (const term of [1,2]) {
-    dictionary[`${year}-${term} · Planned courses`] = `${year}-${term} · 預定課程`;
-  }
   const textEntries = [], attributeEntries = [];
   let locale = 'en';
   const normalize = value => value.trim().replace(/\s+/g, ' ');
