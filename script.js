@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initStickySlider();
   initDegreeCheckpoint();
   initFlipCards();
+  initServiceDetails();
   initNodeConnectors();
   initDossierTelemetry();
   initTiltCards();
@@ -76,7 +77,11 @@ function initTumblerBox() {
   let currentIndex = 0;
   const cycleInterval = 2800; // ms
 
+  const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+  // The visual cycle is decorative; expose one stable, descriptive heading.
+  words.forEach(word => word.setAttribute('aria-hidden', 'true'));
   setInterval(() => {
+    if (motionPreference.matches || document.hidden) return;
     const currentWord = words[currentIndex];
     currentWord.classList.remove('active');
     currentWord.classList.add('exit');
@@ -125,7 +130,7 @@ function initStickySlider() {
 
   // Dragging / Clicking on the slider capsule to scroll
   const capsule = slider.querySelector('.slider-capsule');
-  
+
   function handleScrub(e) {
     const rect = capsule.getBoundingClientRect();
     const clientX = e.clientX || (e.touches && e.touches[0].clientX);
@@ -134,7 +139,7 @@ function initStickySlider() {
     const clickX = Math.min(Math.max(clientX - rect.left, 0), rect.width);
     const scrubRatio = clickX / rect.width;
     const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-    
+
     window.scrollTo({
       top: scrubRatio * maxScroll,
       behavior: 'smooth'
@@ -224,9 +229,9 @@ function initDegreeCheckpoint() {
   // 2. Interactive Milestone Epoch Node Hover Preview
   const epochTargets = [
     { percent: 12.5, label: '12.5%' },
-    { percent: 50.0, label: '50.0% (Epoch 2–4)' },
-    { percent: 87.5, label: '87.5% (Epoch 5–7)' },
-    { percent: 100.0, label: '100.0% (Convergence)' }
+    { percent: 50.0, label: '50.0% (Planned milestone)' },
+    { percent: 87.5, label: '87.5% (Planned milestone)' },
+    { percent: 100.0, label: '100.0% (Graduation goal)' }
   ];
 
   epochNodes.forEach((node, idx) => {
@@ -256,7 +261,13 @@ function initDegreeCheckpoint() {
     });
 
     node.addEventListener('click', () => {
-      showToast(`⚡ [EPOCH TELEMETRY] ${target.label} checkpoint inspected.`);
+      showToast(`Study milestone: ${target.label}.`);
+    });
+    node.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        node.click();
+      }
     });
   });
 }
@@ -271,25 +282,35 @@ function initMenuDrawer() {
 
   if (!menuToggle || !drawer) return;
 
+  drawer.inert = true;
+  function closeDrawer(returnFocus = false) {
+    drawer.classList.remove('open');
+    drawer.inert = true;
+    menuToggle.setAttribute('aria-expanded', 'false');
+    if (returnFocus) menuToggle.focus();
+  }
+
   menuToggle.addEventListener('click', () => {
     const isOpen = drawer.classList.toggle('open');
+    drawer.inert = !isOpen;
     menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   });
 
   // Close drawer when clicking any link
   drawerLinks.forEach((link) => {
     link.addEventListener('click', () => {
-      drawer.classList.remove('open');
-      menuToggle.setAttribute('aria-expanded', 'false');
+      closeDrawer();
     });
   });
 
   // Close on Escape key
   window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && drawer.classList.contains('open')) {
-      drawer.classList.remove('open');
-      menuToggle.setAttribute('aria-expanded', 'false');
+      closeDrawer(true);
     }
+  });
+  document.addEventListener('click', (event) => {
+    if (!drawer.contains(event.target) && !menuToggle.contains(event.target)) closeDrawer();
   });
 }
 
@@ -317,16 +338,16 @@ function initCopyButton() {
         document.body.removeChild(tempInput);
       }
 
-      showToast('⚡ [SUCCESS] Portfolio URL copied to clipboard!');
+      showToast('Site link copied to your clipboard.');
       if (copyBtnText) {
         const orig = copyBtnText.textContent;
-        copyBtnText.textContent = 'Copied!';
+        copyBtnText.textContent = 'Link Copied';
         setTimeout(() => {
           copyBtnText.textContent = orig;
         }, 2000);
       }
     } catch (err) {
-      showToast('⚡ Portfolio URL: ' + window.location.href);
+      showToast('Copy this site link: ' + window.location.href);
     }
   });
 }
@@ -354,18 +375,17 @@ function initContactForms() {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       const name = document.getElementById('formName').value;
-      
+
       if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.textContent = 'Transmitting...';
+        submitBtn.textContent = 'Preparing Preview...';
       }
 
       setTimeout(() => {
-        showToast(`⚡ Message sent! Thank you, ${name || 'friend'}. Eljhon Steve (羅俊豪) will reach out shortly.`);
-        form.reset();
+        showToast(`Thanks, ${name || 'there'}. This is a form preview; your message was not sent. Please contact me through the social links.`);
         if (submitBtn) {
           submitBtn.disabled = false;
-          submitBtn.innerHTML = `<span>Initiate Ping</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>`;
+          submitBtn.innerHTML = `<span>Preview Inquiry</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>`;
         }
       }, 900);
     });
@@ -378,12 +398,11 @@ function initContactForms() {
     footerConnectBtn.addEventListener('click', () => {
       const email = footerEmailInput.value.trim();
       if (!email || !email.includes('@')) {
-        showToast('⚠️ Please enter a valid email address.');
+        showToast('Enter a valid email address to try the preview.');
         return;
       }
 
-      showToast(`⚡ Connection established with ${email}!`);
-      footerEmailInput.value = '';
+      showToast(`Preview complete for ${email}. Your email was not sent or added to a mailing list.`);
     });
   }
 }
@@ -404,19 +423,53 @@ function updateCurrentYear() {
 function initFlipCards() {
   const flipCards = document.querySelectorAll('.module-flip-card');
   flipCards.forEach((card) => {
+    const front = card.querySelector('.flip-card-front');
+    const back = card.querySelector('.flip-card-back');
+    const hoverQuery = window.matchMedia('(hover: hover)');
+    let hovered = false;
+    const updateState = () => {
+      const expanded = card.classList.contains('is-flipped') || hovered;
+      card.setAttribute('aria-pressed', String(expanded));
+      front?.setAttribute('aria-hidden', String(expanded));
+      back?.setAttribute('aria-hidden', String(!expanded));
+    };
+    updateState();
+    card.addEventListener('mouseenter', () => { hovered = hoverQuery.matches; updateState(); });
+    card.addEventListener('mouseleave', () => { hovered = false; updateState(); });
     // Enable keyboard accessibility (Enter/Space key)
     card.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
         card.classList.toggle('is-flipped');
+        updateState();
       }
     });
 
     // Tap support for mobile devices
     card.addEventListener('click', (e) => {
       // Don't toggle if clicking on a link inside the card
-      if (e.target.tagName.toLowerCase() === 'a') return;
+      if (e.target.closest('a')) return;
       card.classList.toggle('is-flipped');
+      updateState();
+    });
+  });
+}
+
+function initServiceDetails() {
+  document.querySelectorAll('.staggered-action-pill').forEach((pill, index) => {
+    const details = pill.querySelector('.pill-popout-desc');
+    const title = pill.querySelector('.action-title');
+    if (!details || !title) return;
+    title.id = `service-title-${index}`;
+    details.id = `service-details-${index}`;
+    pill.setAttribute('role', 'button');
+    pill.setAttribute('aria-labelledby', title.id);
+    pill.setAttribute('aria-controls', details.id);
+    pill.setAttribute('aria-expanded', 'false');
+    const toggle = () => pill.setAttribute('aria-expanded', String(pill.getAttribute('aria-expanded') !== 'true'));
+    pill.addEventListener('click', toggle);
+    pill.addEventListener('keydown', event => {
+      if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); toggle(); }
     });
   });
 }
@@ -578,4 +631,3 @@ function initTiltCards() {
     }, { passive: true });
   });
 }
-

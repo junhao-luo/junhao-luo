@@ -36,3 +36,6 @@ AI Automation | Video Editing | Graphic Design | Virtual Assistance
   <a href="https://www.instagram.com/st_tib/"><img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram"/></a>
   <a href="https://www.facebook.com/eljhon.satsat.2025"><img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white" alt="Facebook"/></a>
 </p>
+
+## Build Instructions
+Run `python generate_sitemap.py` to regenerate `sitemap.xml` before deploying the site.
