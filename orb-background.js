@@ -1,24 +1,15 @@
 /**
  * ELJHON STEVE (羅俊豪) - AI ORB BACKGROUND ENGINE (HIGH PERFORMANCE)
- * Optimized per design-motion-principles:
- * - Precomputed Float32Array buffers (Zero per-frame golden angle trig)
- * - 4,200 desktop / 2,200 mobile particles with crisp geometric scale (78% CPU reduction)
- * - Pre-baked instance colors (eliminates 18,000 per-frame color uploads)
- * - Capped 1.5x pixel ratio for UnrealBloomPass GPU fillrate efficiency
- * - Page Visibility API tab sleeping & prefers-reduced-motion accessibility
+ * The decorative effect loads after page content and stops when it is hidden.
+ * Fewer particles, capped resolution, and a 30 fps limit bound its rendering cost.
  */
-import * as THREE from 'three';
-import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
-import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
-import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
-
-function initAiOrb() {
+async function initAiOrb() {
   const canvas = document.getElementById('aiOrbCanvas');
   if (!canvas) return;
+  const THREE = await import('three');
 
-  // CONFIGURATION (Balanced for buttery 60fps on all mobile & desktop devices)
   const isMobile = window.innerWidth < 768;
-  const COUNT = isMobile ? 2200 : 4200;
+  const COUNT = isMobile ? 700 : 1800;
   const SPEED_MULT = 0.95;
 
   // SCENE SETUP
@@ -31,27 +22,14 @@ function initAiOrb() {
   const renderer = new THREE.WebGLRenderer({
     canvas: canvas,
     antialias: false,
-    powerPreference: 'high-performance',
+    powerPreference: 'low-power',
     alpha: false,
     stencil: false,
     depth: true
   });
   renderer.setClearColor(0x000000, 1.0);
   renderer.setSize(window.innerWidth, window.innerHeight);
-  // Cap pixelRatio to 1.5 to protect mobile GPUs from 3x/4x fillrate death during bloom
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
-
-  // POST PROCESSING (UNREAL BLOOM)
-  const composer = new EffectComposer(renderer);
-  composer.addPass(new RenderPass(scene, camera));
-
-  const bloomPass = new UnrealBloomPass(
-    new THREE.Vector2(window.innerWidth, window.innerHeight),
-    1.45,
-    0.38,
-    0.03
-  );
-  composer.addPass(bloomPass);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, isMobile ? 0.75 : 1));
 
   // SWARM OBJECTS & GEOMETRY
   const dummy = new THREE.Object3D();
@@ -122,27 +100,21 @@ function initAiOrb() {
     targetScrollY = window.scrollY || document.documentElement.scrollTop;
   }, { passive: true });
 
-  // ACCESSIBILITY: prefers-reduced-motion check
   const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-  let isReducedMotion = motionQuery.matches;
-  motionQuery.addEventListener('change', (e) => {
-    isReducedMotion = e.matches;
-  });
+  const transparencyQuery = window.matchMedia('(prefers-reduced-transparency: reduce)');
+  const contrastQuery = window.matchMedia('(prefers-contrast: more)');
 
   // ANIMATION LOOP WITH TAB VISIBILITY SLEEP
   const clock = new THREE.Clock();
   let animFrameId = null;
-  let isRunning = true;
+  let isRunning = false;
+  let lastFrame = 0;
 
-  function animate() {
+  function animate(now) {
     if (!isRunning) return;
     animFrameId = requestAnimationFrame(animate);
-
-    if (isReducedMotion) {
-      // Gentle static render when user prefers reduced motion
-      composer.render();
-      return;
-    }
+    if (now - lastFrame < 1000 / 30) return;
+    lastFrame = now;
 
     const time = clock.getElapsedTime() * SPEED_MULT;
     const t = time * flow;
@@ -199,24 +171,27 @@ function initAiOrb() {
     }
 
     instancedMesh.instanceMatrix.needsUpdate = true;
-    composer.render();
+    renderer.render(scene, camera);
   }
 
   // TAB VISIBILITY SLEEP (Zero battery drain when tab is backgrounded)
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden) {
-      isRunning = false;
-      if (animFrameId) cancelAnimationFrame(animFrameId);
+  function updatePlayback() {
+    const shouldRun = !document.hidden && !motionQuery.matches && !transparencyQuery.matches && !contrastQuery.matches;
+    if (shouldRun === isRunning) return;
+    isRunning = shouldRun;
+    if (isRunning) {
+      lastFrame = 0;
+      clock.start();
+      animFrameId = requestAnimationFrame(animate);
     } else {
-      if (!isRunning) {
-        isRunning = true;
-        clock.start();
-        animFrameId = requestAnimationFrame(animate);
-      }
+      cancelAnimationFrame(animFrameId);
+      animFrameId = null;
     }
-  });
-
-  animate();
+  }
+  document.addEventListener('visibilitychange', updatePlayback);
+  for (const query of [motionQuery, transparencyQuery, contrastQuery]) query.addEventListener('change', updatePlayback);
+  renderer.render(scene, camera);
+  updatePlayback();
 
   // PASSIVE RESIZE HANDLER WITH DEBOUNCE
   let resizeTimeout = null;
@@ -228,13 +203,15 @@ function initAiOrb() {
       camera.aspect = width / height;
       camera.updateProjectionMatrix();
       renderer.setSize(width, height);
-      composer.setSize(width, height);
+      if (!isRunning && !document.hidden) renderer.render(scene, camera);
     }, 150);
   }, { passive: true });
 }
 
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initAiOrb);
-} else {
-  initAiOrb();
+function scheduleAiOrb() {
+  const start = () => initAiOrb().catch(error => console.warn('Decorative background unavailable:', error));
+  if ('requestIdleCallback' in window) window.requestIdleCallback(start, {timeout: 1500});
+  else setTimeout(start, 0);
 }
+if (document.readyState === 'complete') scheduleAiOrb();
+else window.addEventListener('load', scheduleAiOrb, {once: true});

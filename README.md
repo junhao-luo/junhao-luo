@@ -34,7 +34,7 @@ I choose tools around the task: scripts for custom logic, automation platforms f
 
 ## Languages and collaboration
 
-I use English, Tagalog and Filipino, and have **TOCFL B1 certification in Mandarin Chinese**. I can support communication between English- and Mandarin-speaking teams.
+I use 中文, English, Filipino and Cebuano, and have **TOCFL B1 certification in Mandarin Chinese**. I can support communication between English- and Mandarin-speaking teams.
 
 I’m open to freelance projects involving automation, video, design or virtual assistance. Send me a description of what you need, your goals and your timeline through one of the channels below. We can discuss the scope and agree on a schedule.
 
@@ -44,3 +44,9 @@ I’m open to freelance projects involving automation, video, design or virtual 
 - [Facebook](https://www.facebook.com/eljhon.satsat.2025)
 
 Based in **Taichung, Taiwan** · Pronouns: **he/him**
+
+## Contact email integration
+
+The contact form and footer email field send requests to a Cloudflare Worker, which delivers notifications through Resend to `eljhonstevesatsat@gmail.com`. The frontend never contains the Resend API key.
+
+See [email-worker/README.md](email-worker/README.md) for domain verification, deployment and local tests. Set the `contact-endpoint` meta tag in `index.html` to the deployed Worker URL ending in `/api/contact` before publishing the frontend. Until the Worker is activated, failed requests show an error and retain the entered details.

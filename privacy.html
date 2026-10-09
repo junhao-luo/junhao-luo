@@ -7,10 +7,9 @@
   <meta name="description" content="How Eljhon Steve (羅俊豪) handles personal information shared through this portfolio and project inquiries.">
   <meta name="theme-color" content="#030712">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20261008-language">
+  <link rel="preload" href="fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261009-resend">
   <style>
     .legal-wrapper {
       max-width: 860px;
@@ -76,7 +75,7 @@
       </div>
 
       <h1>Privacy Policy</h1>
-      <div class="legal-meta">LAST UPDATED: OCTOBER 8, 2026 • ELJHON.ME</div>
+      <div class="legal-meta">LAST UPDATED: OCTOBER 9, 2026 • ELJHON.ME</div>
 
       <div class="legal-section">
         <h2>1. Overview</h2>
@@ -85,7 +84,7 @@
 
       <div class="legal-section">
         <h2>2. Information You Share</h2>
-        <p>When you contact us by email or through a social platform, you may share the information listed below. The contact and email fields on this website are previews: they do not send your entries or subscribe you to updates.</p>
+        <p>When you submit the contact form, your name, email, optional contact details, project type and message are delivered to us through Resend. The footer email field sends a contact request. Neither form subscribes you to a mailing list.</p>
         <ul>
           <li><strong>Contact Details:</strong> Your name, email address, preferred contact channel and project details.</li>
           <li><strong>Website Requests:</strong> Your browser requests files from this site and its external providers. Those providers may receive technical information such as your IP address and browser details. The site code does not include an analytics tracker.</li>
@@ -105,10 +104,11 @@
 
       <div class="legal-section">
         <h2>4. External Services</h2>
-        <p>This website loads fonts from Google Fonts and animation code from unpkg. Contact through a social platform is also subject to that platform’s privacy policy. For project work, client-approved information may be processed by services such as:</p>
+        <p>This website serves fonts locally and loads animation code from unpkg. Contact through a social platform is also subject to that platform’s privacy policy. For project work, client-approved information may be processed by services such as:</p>
         <ul>
-          <li><strong>Hosting &amp; DNS:</strong> GitHub Pages, Cloudflare.</li>
-          <li><strong>Project Automations:</strong> n8n, Make or Formspree, when configured for a project. The current website forms do not use these services.</li>
+          <li><strong>Email Delivery:</strong> Resend processes contact-form details to deliver email to our inbox.</li>
+          <li><strong>Hosting &amp; DNS:</strong> GitHub Pages hosts the website, Namecheap manages DNS, and Cloudflare processes form submissions.</li>
+          <li><strong>Project Automations:</strong> n8n or Make, when configured for a project. These services are separate from the website contact forms.</li>
           <li><strong>AI Services:</strong> OpenAI API or Anthropic Claude API, when agreed for a project. Data handling depends on the provider’s policies and the account settings used.</li>
         </ul>
       </div>
@@ -124,7 +124,7 @@
         <p><strong>Eljhon Steve (羅俊豪)</strong><br>
         Department of Artificial Intelligence Technology & Applications<br>
         Feng Chia University, Taichung, Taiwan<br>
-        Email: <a href="mailto:contact@eljhon.me" style="color: #00e5ff;">contact@eljhon.me</a> (or through LinkedIn)</p>
+        Email: <a href="mailto:eljhonstevesatsat@gmail.com" style="color: #00e5ff;">eljhonstevesatsat@gmail.com</a> (or through LinkedIn)</p>
       </div>
 
       <div style="margin-top: 36px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08);">
@@ -134,6 +134,6 @@
       </div>
     </div>
   </main>
-  <script src="i18n.js?v=20261008-language"></script>
+  <script defer src="i18n.js?v=20261009-resend"></script>
 </body>
 </html>

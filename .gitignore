@@ -19,6 +19,8 @@ venv/
 .env
 .env.*
 !.env.example
+.dev.vars*
+.wrangler/
 .vscode/
 .idea/
 *.log

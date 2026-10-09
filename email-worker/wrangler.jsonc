@@ -1,0 +1,15 @@
+{
+  "name": "eljhon-contact",
+  "main": "contact.mjs",
+  "compatibility_date": "2026-10-09",
+  "workers_dev": true,
+  "vars": {
+    "CONTACT_TO": "eljhonstevesatsat@gmail.com",
+    "RESEND_FROM": "Eljhon Portfolio <portfolio@eljhon.me>",
+    "ALLOWED_ORIGINS": "https://eljhon.me,https://www.eljhon.me"
+  },
+  "ratelimits": [
+    {"name": "CONTACT_RATE_LIMITER", "namespace_id": "1001", "simple": {"limit": 3, "period": 60}},
+    {"name": "CONTACT_GLOBAL_LIMITER", "namespace_id": "1002", "simple": {"limit": 20, "period": 60}}
+  ]
+}

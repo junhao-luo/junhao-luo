@@ -7,7 +7,7 @@
  * 4. Study Timeline & Planned Semester Previews
  * 5. Menu Drawer & Smooth Section Navigation
  * 6. Quick Ping / URL Clipboard Toast Feedback
- * 7. Contact Form Simulation & Footer Email Handling
+ * 7. Contact Form & Footer Email Delivery
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initFlipCards();
   initServiceDetails();
   initNodeConnectors();
-  initDossierTelemetry();
   initTiltCards();
   initMenuDrawer();
   initCopyButton();
@@ -56,7 +55,7 @@ function handleUrlParams() {
    1. VIEWPORT ANIMATION CULLING (Zero Battery Waste on Offscreen Animations)
    ========================================================================== */
 function initViewportAnimationCulling() {
-  const animatedSections = document.querySelectorAll('#checkpoint, #about, #ecosystem, #contact');
+  const animatedSections = document.querySelectorAll('main > section, .mega-site-footer');
   if (!animatedSections.length || !('IntersectionObserver' in window)) return;
 
   const sectionObserver = new IntersectionObserver((entries) => {
@@ -67,7 +66,7 @@ function initViewportAnimationCulling() {
         entry.target.classList.add('is-offscreen');
       }
     });
-  }, { threshold: 0.05 });
+  }, { rootMargin: '160px', threshold: 0 });
 
   animatedSections.forEach((sec) => sectionObserver.observe(sec));
 }
@@ -117,6 +116,7 @@ function initStickySlider() {
 
     progressBar.style.width = `${percent}%`;
     thumb.style.left = `${percent}%`;
+    thumb.setAttribute('aria-valuenow', String(percent));
     if (tooltip) {
       tooltip.textContent = `${percent}%`;
     }
@@ -124,14 +124,33 @@ function initStickySlider() {
 
   window.addEventListener('scroll', updateSlider, { passive: true });
   window.addEventListener('resize', updateSlider);
-  updateSlider();
+  requestAnimationFrame(updateSlider);
+
+  thumb.addEventListener('keydown', (event) => {
+    const maxScroll = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+    const step = maxScroll / 100;
+    const targets = {
+      ArrowRight: window.scrollY + step,
+      ArrowUp: window.scrollY + step,
+      ArrowLeft: window.scrollY - step,
+      ArrowDown: window.scrollY - step,
+      PageUp: window.scrollY + window.innerHeight,
+      PageDown: window.scrollY - window.innerHeight,
+      Home: 0,
+      End: maxScroll
+    };
+    if (!(event.key in targets)) return;
+    event.preventDefault();
+    window.scrollTo({ top: Math.min(maxScroll, Math.max(0, targets[event.key])), behavior: 'instant' });
+    updateSlider();
+  });
 
   // Dragging / Clicking on the slider capsule to scroll
   const capsule = slider.querySelector('.slider-capsule');
 
   function handleScrub(e) {
     const rect = capsule.getBoundingClientRect();
-    const clientX = e.clientX || (e.touches && e.touches[0].clientX);
+    const clientX = e.clientX ?? e.touches?.[0].clientX;
     if (clientX === undefined) return;
 
     const clickX = Math.min(Math.max(clientX - rect.left, 0), rect.width);
@@ -349,43 +368,74 @@ function showToast(msg) {
 function initContactForms() {
   const form = document.getElementById('contactForm');
   const submitBtn = document.getElementById('submitBtn');
+  const footerForm = document.getElementById('footerContactForm');
+  const footerBtn = document.getElementById('footerConnectBtn');
+  const pending = new WeakMap();
 
-  if (form) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name = document.getElementById('formName').value;
-
-      if (submitBtn) {
-        submitBtn.disabled = true;
-        submitBtn.textContent = translate('Preparing Preview...');
+  async function sendContact(payload, button, label, sendingLabel) {
+    const json = JSON.stringify(payload);
+    let submission = pending.get(button);
+    if (!submission || submission.json !== json) {
+      submission = {json, requestId: crypto.randomUUID()};
+      pending.set(button, submission);
+    }
+    const buttonText = button.querySelector('span');
+    button.disabled = true;
+    button.setAttribute('aria-busy', 'true');
+    buttonText.textContent = translate(sendingLabel);
+    try {
+      const endpoint = document.querySelector('meta[name="contact-endpoint"]')?.content || '/api/contact';
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({...payload, requestId: submission.requestId}),
+        signal: AbortSignal.timeout(20_000)
+      });
+      const data = await response.json().catch(() => null);
+      if (!response.ok || data?.ok !== true) {
+        showToast(response.status === 429
+          ? 'Too many requests. Please wait a minute and try again.'
+          : 'Your message could not be sent. Please try again or contact me on LinkedIn.');
+        return false;
       }
-
-      setTimeout(() => {
-        showToast(localized('Thanks, {name}. This is a form preview; your message was not sent. Please contact me through the social links.', '謝謝你，{name}。此表單僅供預覽，訊息並未傳送。請透過社群連結聯絡我。', {name: name || (window.portfolioI18n?.locale === 'zh-Hant' ? '朋友' : 'there')}));
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = `<span>${translate('Preview Inquiry')}</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>`;
-        }
-      }, 900);
-    });
+      pending.delete(button);
+      return true;
+    } catch {
+      showToast('Your message could not be sent. Please try again or contact me on LinkedIn.');
+      return false;
+    } finally {
+      button.disabled = false;
+      button.removeAttribute('aria-busy');
+      buttonText.textContent = translate(label);
+    }
   }
 
-  const footerConnectBtn = document.getElementById('footerConnectBtn');
-  const footerEmailInput = document.getElementById('footerEmailInput');
-
-  if (footerConnectBtn && footerEmailInput) {
-    footerConnectBtn.addEventListener('click', () => {
-      const email = footerEmailInput.value.trim();
-      if (!email || !email.includes('@')) {
-        showToast('Enter a valid email address to try the preview.');
-        return;
+  if (form && submitBtn) {
+    form.addEventListener('submit', async event => {
+      event.preventDefault();
+      if (submitBtn.disabled || !form.reportValidity()) return;
+      const payload = Object.fromEntries(new FormData(form));
+      if (await sendContact({...payload, kind: 'inquiry'}, submitBtn, 'Send Inquiry', 'Sending...')) {
+        form.reset();
+        showToast('Your inquiry has been sent. Thank you!');
       }
-
-      showToast(localized('Preview complete for {email}. Your email was not sent or added to a mailing list.', '{email} 的預覽已完成。電子郵件並未傳送，也未加入訂閱名單。', {email}));
+    });
+  }
+  if (footerForm && footerBtn) {
+    footerForm.addEventListener('submit', async event => {
+      event.preventDefault();
+      if (footerBtn.disabled || !footerForm.reportValidity()) return;
+      const payload = Object.fromEntries(new FormData(footerForm));
+      if (await sendContact({...payload, kind: 'connect'}, footerBtn, 'Connect', 'Sending...')) {
+        footerForm.reset();
+        showToast('Your contact request has been sent. Thank you!');
+      }
     });
   }
   document.addEventListener('portfolio-language-change', () => {
-    if (submitBtn && !submitBtn.disabled) submitBtn.querySelector('span').textContent = translate('Preview Inquiry');
+    for (const [button, label] of [[submitBtn, 'Send Inquiry'], [footerBtn, 'Connect']]) {
+      if (button) button.querySelector('span').textContent = translate(button.disabled ? 'Sending...' : label);
+    }
     const copyLabel = document.getElementById('copyBtnText');
     if (copyLabel) copyLabel.textContent = translate('Copy Site Link');
   });
@@ -440,7 +490,10 @@ function initFlipCards() {
 }
 
 function initServiceDetails() {
-  document.querySelectorAll('.staggered-action-pill').forEach((pill, index) => {
+  const pills = [...document.querySelectorAll('.staggered-action-pill')];
+  const panel = document.querySelector('.dash-panel-right');
+  if (!pills.length || !panel) return;
+  pills.forEach((pill, index) => {
     const details = pill.querySelector('.pill-popout-desc');
     const title = pill.querySelector('.action-title');
     if (!details || !title) return;
@@ -456,6 +509,35 @@ function initServiceDetails() {
       if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); toggle(); }
     });
   });
+
+  // Reserve the fully expanded list so even several open cards cannot move the next section.
+  const reserveSpace = () => {
+    const gap = parseFloat(getComputedStyle(panel).rowGap);
+    const measurements = pills.map(pill => {
+      const details = pill.querySelector('.pill-popout-desc');
+      const descriptionHeight = details.querySelector('p').getBoundingClientRect().height;
+      const styles = getComputedStyle(pill);
+      const height = pill.querySelector('.pill-main-row').getBoundingClientRect().height + descriptionHeight + 12
+        + parseFloat(styles.paddingTop) + parseFloat(styles.paddingBottom)
+        + parseFloat(styles.borderTopWidth) + parseFloat(styles.borderBottomWidth);
+      return {pill, descriptionHeight, height};
+    });
+    const height = gap * (pills.length - 1) + measurements.reduce((total, item) => total + item.height, 0);
+    measurements.forEach(({pill, descriptionHeight}) => {
+      pill.style.setProperty('--service-description-height', `${Math.ceil(descriptionHeight)}px`);
+    });
+    panel.style.minHeight = `${Math.ceil(height + pills.length)}px`;
+  };
+  reserveSpace();
+  document.fonts.ready.then(reserveSpace);
+  document.addEventListener('portfolio-language-change', reserveSpace);
+  if ('ResizeObserver' in window) {
+    const observer = new ResizeObserver(reserveSpace);
+    pills.forEach(pill => {
+      observer.observe(pill.querySelector('.pill-main-row'));
+      observer.observe(pill.querySelector('.pill-popout-desc p'));
+    });
+  }
 }
 
 /* ==========================================================================
@@ -464,6 +546,8 @@ function initServiceDetails() {
 function initNodeConnectors() {
   const canvasArea = document.getElementById('nodeCanvasArea');
   if (!canvasArea) return;
+  let inView = !('IntersectionObserver' in window);
+  let frameId = null;
 
   const pairs = [
     { from: 'socketTriggerOut', to: 'socketAiIn', path: 'bezierTriggerToAi' },
@@ -473,6 +557,8 @@ function initNodeConnectors() {
   ];
 
   function updateConnectors() {
+    frameId = null;
+    if (!inView) return;
     if (window.innerWidth <= 768) {
       pairs.forEach(({ path }) => {
         const pEl = document.getElementById(path);
@@ -483,12 +569,12 @@ function initNodeConnectors() {
 
     const cRect = canvasArea.getBoundingClientRect();
 
-    pairs.forEach(({ from, to, path }) => {
+    const updates = pairs.map(({ from, to, path }) => {
       const sFrom = document.getElementById(from);
       const sTo = document.getElementById(to);
       const pEl = document.getElementById(path);
 
-      if (!sFrom || !sTo || !pEl) return;
+      if (!sFrom || !sTo || !pEl) return null;
 
       const rFrom = sFrom.getBoundingClientRect();
       const rTo = sTo.getBoundingClientRect();
@@ -499,68 +585,25 @@ function initNodeConnectors() {
       const y2 = rTo.top + rTo.height / 2 - cRect.top;
 
       const dx = Math.max((x2 - x1) * 0.45, 25);
-      pEl.setAttribute('d', `M ${x1},${y1} C ${x1 + dx},${y1} ${x2 - dx},${y2} ${x2},${y2}`);
+      return [pEl, `M ${x1},${y1} C ${x1 + dx},${y1} ${x2 - dx},${y2} ${x2},${y2}`];
     });
+    updates.forEach(update => { if (update) update[0].setAttribute('d', update[1]); });
   }
 
-  updateConnectors();
-  window.addEventListener('resize', updateConnectors, { passive: true });
-  window.addEventListener('load', updateConnectors);
-  setTimeout(updateConnectors, 250);
-  setTimeout(updateConnectors, 800);
-}
-
-/* ==========================================================================
-   11. SECTION 4: ARCHITECT DOSSIER TELEMETRY & TIME-SYNC
-   ========================================================================== */
-function initDossierTelemetry() {
-  const timecodeEl = document.getElementById('liveRecTimecode');
-  const langPills = document.querySelectorAll('.lang-spectrum-strip .lang-pill');
-
-  // 2. Video Viewfinder REC Timecode (Rolling 24fps counter)
-  if (timecodeEl) {
-    let frame = 12;
-    let sec = 19;
-    let min = 24;
-    let hr = 0;
-
-    setInterval(() => {
-      frame++;
-      if (frame >= 24) {
-        frame = 0;
-        sec++;
-        if (sec >= 60) {
-          sec = 0;
-          min++;
-          if (min >= 60) {
-            min = 0;
-            hr++;
-          }
-        }
-      }
-      const pad = (n) => (n < 10 ? '0' + n : n);
-      timecodeEl.textContent = `${pad(hr)}:${pad(min)}:${pad(sec)}:${pad(frame)}`;
-    }, 1000 / 24);
+  function scheduleUpdate() {
+    if (inView && frameId === null) frameId = requestAnimationFrame(updateConnectors);
   }
-
-  // 3. Dynamic Cycling of Language Spectrum Pills
-  if (langPills.length > 0) {
-    let currentIdx = 0;
-    setInterval(() => {
-      langPills.forEach((p) => {
-        p.classList.remove('active-lang');
-        const dot = p.querySelector('.lang-dot');
-        if (dot) dot.remove();
-      });
-
-      currentIdx = (currentIdx + 1) % langPills.length;
-      const activePill = langPills[currentIdx];
-      activePill.classList.add('active-lang');
-      const dot = document.createElement('span');
-      dot.className = 'lang-dot';
-      activePill.prepend(dot);
-    }, 2800);
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(([entry]) => {
+      inView = entry.isIntersecting;
+      scheduleUpdate();
+    }, {rootMargin: '160px'});
+    observer.observe(canvasArea);
   }
+  window.addEventListener('resize', scheduleUpdate, { passive: true });
+  document.addEventListener('portfolio-language-change', scheduleUpdate);
+  document.fonts.ready.then(scheduleUpdate);
+  scheduleUpdate();
 }
 
 /* ==========================================================================

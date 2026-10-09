@@ -6,6 +6,8 @@
   <title>Eljhon Steve (羅俊豪) | AI Automation &amp; Creative Services</title>
   <meta name="description" content="Eljhon Steve (羅俊豪) builds AI workflows and creates video and design work. Based in Taichung, Taiwan, and studying AI at Feng Chia University.">
   <meta name="theme-color" content="#030712">
+  <!-- Set this to the deployed email Worker URL, ending in /api/contact. -->
+  <meta name="contact-endpoint" content="https://eljhon-contact.junhao-luo.workers.dev/api/contact">
 
   <!-- Open Graph / Social Meta -->
   <meta property="og:title" content="Eljhon Steve (羅俊豪) | AI Automation">
@@ -16,24 +18,21 @@
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
 
-  <!-- Google Fonts: Space Grotesk, Outfit, Caveat (Cursive Accent), JetBrains Mono -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Three.js Import Map for AI Blue Orb Swarm Engine -->
   <script type="importmap">
   {
       "imports": {
-          "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
-          "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+          "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
       }
   }
   </script>
-  <script type="module" src="orb-background.js"></script>
+  <script type="module" src="orb-background.js?v=20261009-resend"></script>
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="style.css?v=20261008-education-overview">
+  <link rel="stylesheet" href="style.css?v=20261009-stable-services">
   <!-- JSON-LD Local Business & Professional Schema -->
   <script type="application/ld+json">
   {
@@ -65,7 +64,7 @@
         "@type": "CollegeOrUniversity",
         "name": "Feng Chia University"
       },
-      "knowsLanguage": ["English", "Mandarin Chinese", "Tagalog", "Filipino"],
+      "knowsLanguage": ["Mandarin Chinese", "English", "Filipino", "Cebuano"],
       "sameAs": [
         "https://www.linkedin.com/in/eljhon-satsat/",
         "https://www.instagram.com/st_tib/",
@@ -758,31 +757,14 @@
             </div>
           </div>
 
-          <!-- 3 Vertical File-Folder Panels with Fluid Ink Background (Cre8tera Frame 24 style) -->
+          <!-- Capabilities -->
           <div class="folder-panels-container">
-
-            <!-- Panel 01: Automation Systems -->
-            <div class="folder-panel tilt-card" tabindex="0">
+            <div class="folder-panel tilt-card">
               <div class="card-specular-sheen" aria-hidden="true"></div>
-
-              <!-- Fluid Ink / Watercolor Dynamic Backdrop -->
-              <div class="folder-fluid-backdrop" aria-hidden="true">
-                <div class="fluid-orb orb-1"></div>
-                <div class="fluid-orb orb-2"></div>
-                <div class="fluid-orb orb-3"></div>
-                <div class="fluid-mesh-pattern"></div>
-                <div class="fluid-bloom-pulse"></div>
-              </div>
-
               <div class="folder-top-tab">
                 <span class="folder-num">01</span>
                 <span class="folder-tab-title">AUTOMATION SYSTEMS</span>
-                <span class="telemetry-status-pill green">
-                  <span class="pill-beacon green"></span>
-                  <span>RELIABLE</span>
-                </span>
               </div>
-
               <div class="folder-content">
                 <div class="folder-main-text">
                   <h4 class="folder-heading">Connect the Tools You Use.</h4>
@@ -790,63 +772,22 @@
                     I connect business tools so data can move between them without repeated entry. AI assistants can handle text-based steps within those workflows.
                   </p>
                 </div>
-
-                <!-- Animated Micro Data Pipeline Graphic -->
-                <div class="mini-data-flow" aria-hidden="true">
-                  <div class="mini-stage">
-                    <span class="mini-tag">TRIGGER</span>
-                  </div>
-                  <div class="mini-channel">
-                    <div class="channel-line"></div>
-                    <span class="channel-dot d1"></span>
-                    <span class="channel-dot d2"></span>
-                  </div>
-                  <div class="mini-stage active">
-                    <span class="mini-tag">AI AGENT</span>
-                  </div>
-                  <div class="mini-channel">
-                    <div class="channel-line"></div>
-                    <span class="channel-dot d1"></span>
-                    <span class="channel-dot d2"></span>
-                  </div>
-                  <div class="mini-stage target">
-                    <span class="mini-tag">DELIVER</span>
-                  </div>
-                </div>
-
-                <div class="folder-interactive-footer">
-                  <div class="folder-footer-meta">
-                    <span class="code-mono cyan-meta">STACK: Python / n8n / APIs</span>
-                    <span class="telemetry-speed">&gt; APP INTEGRATIONS</span>
-                  </div>
-                  <div class="card-live-bar">
-                    <div class="card-live-fill fill-flow"></div>
-                  </div>
+                <div class="folder-details">
+                  <ul class="folder-detail-list" data-no-translate>
+                    <li>Python</li>
+                    <li>n8n</li>
+                    <li>APIs</li>
+                  </ul>
                 </div>
               </div>
             </div>
 
-            <!-- Panel 02: Digital Media & Design -->
-            <div class="folder-panel tilt-card" tabindex="0">
+            <div class="folder-panel tilt-card">
               <div class="card-specular-sheen" aria-hidden="true"></div>
-
-              <div class="folder-fluid-backdrop" aria-hidden="true">
-                <div class="fluid-orb orb-2"></div>
-                <div class="fluid-orb orb-3"></div>
-                <div class="fluid-orb orb-1"></div>
-                <div class="fluid-mesh-pattern"></div>
-                <div class="fluid-bloom-pulse"></div>
-              </div>
-
               <div class="folder-top-tab">
                 <span class="folder-num">02</span>
                 <span class="folder-tab-title">DIGITAL MEDIA &amp; DESIGN</span>
-                <span class="telemetry-status-pill cyan">
-                  <span class="pill-beacon cyan"></span>
-                  <span>SYNCED</span>
-                </span>
               </div>
-
               <div class="folder-content">
                 <div class="folder-main-text">
                   <h4 class="folder-heading">Video &amp; Design Work.</h4>
@@ -854,91 +795,40 @@
                     I edit footage, create motion graphics and design visuals to explain your products and services.
                   </p>
                 </div>
-
-                <!-- Animated Video Viewfinder Timecode Badge -->
-                <div class="multimodal-rec-badge" aria-hidden="true">
-                  <div class="rec-left">
-                    <span class="rec-recording-dot"></span>
-                    <span class="rec-tag">LIVE REC</span>
-                  </div>
-                  <span class="rec-timecode code-mono" id="liveRecTimecode">00:24:19:12</span>
-                </div>
-
-                <div class="folder-interactive-footer">
-                  <div class="folder-footer-meta">
-                    <span class="code-mono cyan-meta">VIDEO / MOTION / UI</span>
-                    <!-- 8-Band Live Soundwave Equalizer Animation -->
-                    <div class="sound-equalizer" aria-hidden="true">
-                      <span class="eq-bar b1"></span>
-                      <span class="eq-bar b2"></span>
-                      <span class="eq-bar b3"></span>
-                      <span class="eq-bar b4"></span>
-                      <span class="eq-bar b5"></span>
-                      <span class="eq-bar b6"></span>
-                      <span class="eq-bar b7"></span>
-                      <span class="eq-bar b8"></span>
-                    </div>
-                  </div>
-                  <div class="card-live-bar">
-                    <div class="card-live-fill fill-media"></div>
-                  </div>
+                <div class="folder-details">
+                  <ul class="folder-detail-list">
+                    <li>Video</li>
+                    <li>Motion</li>
+                    <li>Design</li>
+                  </ul>
                 </div>
               </div>
             </div>
 
-            <!-- Panel 03: Global & Bilingual Ops -->
-            <div class="folder-panel tilt-card" tabindex="0">
+            <div class="folder-panel tilt-card">
               <div class="card-specular-sheen" aria-hidden="true"></div>
-
-              <div class="folder-fluid-backdrop" aria-hidden="true">
-                <div class="fluid-orb orb-3"></div>
-                <div class="fluid-orb orb-1"></div>
-                <div class="fluid-orb orb-2"></div>
-                <div class="fluid-mesh-pattern"></div>
-                <div class="fluid-bloom-pulse"></div>
-                <!-- Floating Holographic Chinese Glyphs -->
-                <div class="floating-glyph g1">智</div>
-                <div class="floating-glyph g2">流</div>
-                <div class="floating-glyph g3">創</div>
-              </div>
-
               <div class="folder-top-tab">
                 <span class="folder-num">03</span>
                 <span class="folder-tab-title">LANGUAGES &amp; COMMUNICATION</span>
-                <span class="telemetry-status-pill purple">
-                  <span class="pill-beacon purple"></span>
-                  <span>TOCFL B1</span>
-                </span>
               </div>
-
               <div class="folder-content">
                 <div class="folder-main-text">
                   <h4 class="folder-heading">Work Across Languages.</h4>
                   <p class="folder-text">
-                    I use English, Tagalog and Filipino, and have TOCFL B1 certification in Mandarin Chinese. I can support communication between English- and Mandarin-speaking teams.
+                    I use Chinese, English, Filipino and Cebuano. I have TOCFL B1 certification in Mandarin Chinese.
                   </p>
                 </div>
-
-                <!-- Animated Language Spectrum Strip -->
-                <div class="lang-spectrum-strip" aria-hidden="true">
-                  <span class="lang-pill active-lang"><span class="lang-dot"></span>ZH 中文 (繁體)</span>
-                  <span class="lang-pill">EN English</span>
-                  <span class="lang-pill">TL Tagalog</span>
-                  <span class="lang-pill">FIL Filipino</span>
-                </div>
-
-                <div class="folder-interactive-footer">
-                  <div class="folder-footer-meta">
-                    <span class="code-mono cyan-meta">TOCFL B1 MANDARIN • ENGLISH</span>
-                    <span class="telemetry-speed">ENGLISH &amp; MANDARIN</span>
-                  </div>
-                  <div class="card-live-bar">
-                    <div class="card-live-fill fill-nlp"></div>
-                  </div>
+                <div class="folder-details">
+                  <ul class="folder-detail-list" data-no-translate>
+                    <li lang="zh-Hant">中文</li>
+                    <li lang="en">English</li>
+                    <li lang="fil">Filipino</li>
+                    <li lang="ceb">Cebuano</li>
+                  </ul>
+                  <p class="folder-note">TOCFL B1 · Mandarin Chinese</p>
                 </div>
               </div>
             </div>
-
           </div>
 
         </div>
@@ -1172,7 +1062,7 @@
             <span class="floating-badge">CONTACT</span>
           </div>
           <h2 class="contact-title">Tell me about your project.</h2>
-          <p class="contact-sub">For automation, video or design projects, contact me on LinkedIn or my other social channels. The form below is a preview and does not send messages.</p>
+          <p class="contact-sub">Send an inquiry about your automation, video or design project. You can also contact me on LinkedIn or my other social channels.</p>
         </div>
 
         <!-- Full-Width Minimalist Structural Form with Glass Card Enclosure -->
@@ -1182,45 +1072,46 @@
           <span class="crop-corner c-bl" aria-hidden="true"></span>
           <span class="crop-corner c-br" aria-hidden="true"></span>
           <form class="structural-form" id="contactForm">
+          <input type="text" name="website" class="contact-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
 
           <div class="structural-field-row">
             <span class="grid-cross-node c-left">+</span>
             <span class="grid-cross-node c-right">+</span>
             <label for="formName" class="structural-label">Name</label>
-            <input type="text" id="formName" name="name" class="structural-input" placeholder="Your name" required>
+            <input type="text" id="formName" name="name" maxlength="100" autocomplete="name" class="structural-input" placeholder="Your name" required>
           </div>
 
           <div class="structural-field-row">
             <span class="grid-cross-node c-left">+</span>
             <span class="grid-cross-node c-right">+</span>
             <label for="formEmail" class="structural-label">Email</label>
-            <input type="email" id="formEmail" name="email" class="structural-input" placeholder="you@example.com" required>
+            <input type="email" id="formEmail" name="email" maxlength="254" autocomplete="email" spellcheck="false" class="structural-input" placeholder="you@example.com" required>
           </div>
 
           <div class="structural-field-row">
             <span class="grid-cross-node c-left">+</span>
             <span class="grid-cross-node c-right">+</span>
             <label for="formChannel" class="structural-label">Other Contact (Optional)</label>
-            <input type="text" id="formChannel" name="channel" class="structural-input" placeholder="Your social handle or phone number">
+            <input type="text" id="formChannel" name="channel" maxlength="200" class="structural-input" placeholder="Your social handle or phone number">
           </div>
 
           <div class="structural-field-row">
             <span class="grid-cross-node c-left">+</span>
             <span class="grid-cross-node c-right">+</span>
             <label for="formScope" class="structural-label">Project Type</label>
-            <input type="text" id="formScope" name="scope" class="structural-input" placeholder="For example, workflow automation or video editing">
+            <input type="text" id="formScope" name="scope" maxlength="200" class="structural-input" placeholder="For example, workflow automation or video editing">
           </div>
 
           <div class="structural-field-row message-row">
             <span class="grid-cross-node c-left">+</span>
             <span class="grid-cross-node c-right">+</span>
             <label for="formMessage" class="structural-label">Message</label>
-            <textarea id="formMessage" name="message" class="structural-textarea" rows="3" placeholder="What do you need help with? Include your goals and timeline."></textarea>
+            <textarea id="formMessage" name="message" maxlength="5000" required class="structural-textarea" rows="3" placeholder="What do you need help with? Include your goals and timeline."></textarea>
           </div>
 
           <div class="structural-submit-bar">
             <button type="submit" class="submit-action-pill" id="submitBtn">
-              <span>Preview Inquiry</span>
+              <span>Send Inquiry</span>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </button>
           </div>
@@ -1298,15 +1189,16 @@
         <span class="crop-corner c-tr" aria-hidden="true"></span>
         <span class="crop-corner c-bl" aria-hidden="true"></span>
         <span class="crop-corner c-br" aria-hidden="true"></span>
-        <span class="dir-title">Email Preview</span>
-        <p class="footer-email-desc">Try the email field below. It does not send an inquiry or subscribe you to updates. Contact me through the social links above.</p>
-        <div class="footer-email-input-wrap">
-          <input type="email" id="footerEmailInput" placeholder="Your email for this preview" aria-label="Email address for the form preview" class="footer-email-input">
-          <button class="footer-subscribe-btn" id="footerConnectBtn">
+        <span class="dir-title">Quick Contact</span>
+        <p class="footer-email-desc">Leave your email and I’ll get back to you. This sends a contact request, not a mailing-list subscription.</p>
+        <form class="footer-email-input-wrap" id="footerContactForm">
+          <input type="text" name="website" class="contact-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <input type="email" id="footerEmailInput" name="email" maxlength="254" autocomplete="email" spellcheck="false" placeholder="Your email address" aria-label="Email address for a contact request" class="footer-email-input" required>
+          <button type="submit" class="footer-subscribe-btn" id="footerConnectBtn">
             <svg class="cursor-pill-icon" width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M4 0l16 12.279-6.951 1.17 4.325 8.817-3.596 1.734-4.35-8.879-5.428 5.242z"/></svg>
-            <span>Preview</span>
+            <span>Connect</span>
           </button>
-        </div>
+        </form>
       </div>
 
     </div>
@@ -1342,7 +1234,7 @@
   <div id="toast" class="toast-notification" role="status" aria-live="polite"></div>
 
   <!-- Main JavaScript File -->
-  <script src="i18n.js?v=20261008-education-overview"></script>
-  <script src="script.js?v=20261008-education-overview"></script>
+  <script defer src="i18n.js?v=20261009-resend"></script>
+  <script defer src="script.js?v=20261009-stable-services"></script>
 </body>
 </html>

@@ -130,11 +130,14 @@ Video & Design Work.	影片與設計作品。
 I edit footage, create motion graphics and design visuals to explain your products and services.	我剪輯素材、製作動態圖像，並透過視覺設計說明你的產品與服務。
 LIVE REC	錄製示意
 VIDEO / MOTION / UI	影片／動態視覺／介面
+Video	影片
+Motion	動態視覺
+Design	設計
+TOCFL B1 · Mandarin Chinese	TOCFL B1 · 華語
 LANGUAGES & COMMUNICATION	語言與溝通
 Work Across Languages.	跨語言協作。
-I use English, Tagalog and Filipino, and have TOCFL B1 certification in Mandarin Chinese. I can support communication between English- and Mandarin-speaking teams.	我使用英語、他加祿語與菲律賓語，並取得華語文能力測驗 TOCFL B1 認證。我能協助英語與華語團隊之間的溝通。
+I use Chinese, English, Filipino and Cebuano. I have TOCFL B1 certification in Mandarin Chinese.	我使用中文、英語、菲律賓語與宿霧語，並取得華語文能力測驗 TOCFL B1 認證。
 EN English	EN 英語
-TL Tagalog	TL 他加祿語
 FIL Filipino	FIL 菲律賓語
 TOCFL B1 MANDARIN • ENGLISH	TOCFL B1 華語 • 英語
 ENGLISH & MANDARIN	英語與華語
@@ -171,7 +174,6 @@ Get help organizing project tasks and communicating with clients in English and 
 CONTACT ELJHON STEVE (羅俊豪) • AI AUTOMATION • VIDEO & DESIGN • LET’S WORK TOGETHER •	聯絡 ELJHON STEVE（羅俊豪） • AI 自動化 • 影片與設計 • 一起合作 •
 CONTACT	聯絡
 Tell me about your project.	告訴我你的專案需求。
-For automation, video or design projects, contact me on LinkedIn or my other social channels. The form below is a preview and does not send messages.	如有自動化、影片或設計需求，請透過 LinkedIn 或其他社群管道聯絡我。下方表單僅供預覽，不會傳送訊息。
 Name	姓名
 Your name	你的姓名
 Email	電子郵件
@@ -214,7 +216,7 @@ Contact Eljhon	聯絡 Eljhon
 Inquiry Next Steps | Eljhon Steve (羅俊豪)	洽談後續步驟 | Eljhon Steve（羅俊豪）
 [ NEXT STEPS ]	[ 後續步驟 ]
 Thanks for Your Interest	感謝你的關注
-If you sent an inquiry through a direct contact channel, here’s what happens next with	若你已透過直接聯絡管道提出需求，以下是後續步驟。聯絡對象：
+After you send an inquiry through this website or a direct contact channel, here’s what happens next with	當你透過本網站或直接聯絡管道送出詢問後，接下來會由以下流程處理：
 STAGE 01	步驟 01
 Project Review	需求確認
 I’ll review what you need, your project scope and your goals.	我會了解你的需求、專案範圍與目標。
@@ -228,13 +230,13 @@ Connect on LinkedIn ↗	透過 LinkedIn 聯絡 ↗
 Privacy Policy | Eljhon Steve (羅俊豪)	隱私權政策 | Eljhon Steve（羅俊豪）
 [ YOUR INFORMATION ]	[ 你的資訊 ]
 Privacy Policy	隱私權政策
-LAST UPDATED: OCTOBER 8, 2026 • ELJHON.ME	最後更新：2026 年 10 月 8 日 • ELJHON.ME
+LAST UPDATED: OCTOBER 9, 2026 • ELJHON.ME	最後更新：2026 年 10 月 9 日 • ELJHON.ME
 1. Overview	1. 概述
 This policy explains how	本政策說明
 ("we", "us", or "our"), operating at	（以下稱「我們」）在
 , handles information you share when you contact us about our services.	，如何處理你在洽詢服務時提供的資訊。
 2. Information You Share	2. 你提供的資訊
-When you contact us by email or through a social platform, you may share the information listed below. The contact and email fields on this website are previews: they do not send your entries or subscribe you to updates.	當你透過電子郵件或社群平臺聯絡我們時，可能會提供以下資訊。本網站的聯絡與電子郵件欄位僅供預覽，不會傳送輸入內容或訂閱更新。
+When you submit the contact form, your name, email, optional contact details, project type and message are delivered to us through Resend. The footer email field sends a contact request. Neither form subscribes you to a mailing list.	當你提交聯絡表單時，姓名、電子郵件、其他聯絡方式、專案類型與訊息會透過 Resend 傳送給我們。頁尾的電子郵件欄位會傳送聯絡請求，兩種表單都不會將你加入郵件訂閱名單。
 Contact Details:	聯絡資訊：
 Your name, email address, preferred contact channel and project details.	你的姓名、電子郵件地址、偏好的聯絡管道與專案資訊。
 Website Requests:	網站請求：
@@ -248,10 +250,10 @@ We	我們
 do not	不會
 sell, rent or trade your personal information to advertisers or other third parties.	向廣告商或其他第三方出售、出租或交易你的個人資訊。
 4. External Services	4. 外部服務
-This website loads fonts from Google Fonts and animation code from unpkg. Contact through a social platform is also subject to that platform’s privacy policy. For project work, client-approved information may be processed by services such as:	本網站從 Google Fonts 載入字型，並從 unpkg 載入動畫程式碼。透過社群平臺聯絡時，也適用該平臺的隱私權政策。執行專案時，經客戶同意的資訊可能透過以下服務處理：
+This website serves fonts locally and loads animation code from unpkg. Contact through a social platform is also subject to that platform’s privacy policy. For project work, client-approved information may be processed by services such as:	本網站直接提供字型，並從 unpkg 載入動畫程式碼。透過社群平臺聯絡時，也適用該平臺的隱私權政策。執行專案時，經客戶同意的資訊可能透過以下服務處理：
 Hosting & DNS:	主機與 DNS：
 Project Automations:	專案自動化：
-n8n, Make or Formspree, when configured for a project. The current website forms do not use these services.	依專案設定使用 n8n、Make 或 Formspree。目前網站表單未使用這些服務。
+n8n or Make, when configured for a project. These services are separate from the website contact forms.	依專案設定使用 n8n 或 Make。這些服務與網站聯絡表單分開運作。
 AI Services:	AI 服務：
 OpenAI API or Anthropic Claude API, when agreed for a project. Data handling depends on the provider’s policies and the account settings used.	經專案雙方同意後使用 OpenAI API 或 Anthropic Claude API。資料處理方式依服務提供者的政策與帳戶設定而定。
 5. Keeping and Updating Your Information	5. 資訊保存與更新
@@ -268,6 +270,21 @@ Preparing Preview...	正在準備預覽⋯
 Enter a valid email address to try the preview.	請輸入有效的電子郵件地址以試用預覽。
 Eljhon Steve (羅俊豪) | AI Automation & Creative Services	Eljhon Steve（羅俊豪） | AI 自動化與創意服務
 Eljhon Steve (羅俊豪) | AI Automation	Eljhon Steve（羅俊豪） | AI 自動化
+Send an inquiry about your automation, video or design project. You can also contact me on LinkedIn or my other social channels.	歡迎詢問自動化、影片或設計專案，也可以透過 LinkedIn 或其他社群管道聯絡我。
+Send Inquiry	傳送詢問
+Sending...	傳送中…
+Your inquiry has been sent. Thank you!	你的詢問已送出，謝謝！
+Your contact request has been sent. Thank you!	你的聯絡請求已送出，謝謝！
+Your message could not be sent. Please try again or contact me on LinkedIn.	訊息未能送出，請重試或透過 LinkedIn 聯絡我。
+Too many requests. Please wait a minute and try again.	請求次數過多，請稍候一分鐘再試。
+Quick Contact	快速聯絡
+Leave your email and I’ll get back to you. This sends a contact request, not a mailing-list subscription.	留下電子郵件，我會再與你聯絡。這會傳送聯絡請求，並非訂閱郵件名單。
+Your email address	你的電子郵件地址
+Email address for a contact request	聯絡請求的電子郵件地址
+Connect	聯絡我
+Email Delivery:	電子郵件傳送：
+Resend processes contact-form details to deliver email to our inbox.	Resend 會處理聯絡表單的內容，以便將電子郵件傳送到我們的收件匣。
+GitHub Pages hosts the website, Namecheap manages DNS, and Cloudflare processes form submissions.	網站由 GitHub Pages 託管，DNS 由 Namecheap 管理，表單提交則由 Cloudflare 處理。
 `.trim().split('\n').map(line => line.split('\t')));
 
   const textEntries = [], attributeEntries = [];
@@ -276,24 +293,30 @@ Eljhon Steve (羅俊豪) | AI Automation	Eljhon Steve（羅俊豪） | AI 自動
   const t = value => locale === 'zh-Hant' ? dictionary[normalize(value)] || value : value;
   const interpolate = (en, zh, values) => (locale === 'zh-Hant' ? zh : en).replace(/\{(\w+)\}/g, (_, key) => values[key]);
   function setLocale(value) {
-    locale = value === 'zh-Hant' ? 'zh-Hant' : 'en';
-    document.documentElement.lang = locale;
+    const nextLocale = value === 'zh-Hant' ? 'zh-Hant' : 'en';
+    const changed = locale !== nextLocale;
+    locale = nextLocale;
+    if (document.documentElement.lang !== locale) document.documentElement.lang = locale;
     textEntries.forEach(([node, original]) => {
       const translated = t(original);
-      node.textContent = translated === original ? original : original.replace(original.trim(), translated);
+      const next = translated === original ? original : original.replace(original.trim(), translated);
+      if (node.nodeValue !== next) node.nodeValue = next;
     });
-    attributeEntries.forEach(([element, attr, original]) => element.setAttribute(attr, t(original)));
+    attributeEntries.forEach(([element, attr, original]) => {
+      const next = t(original);
+      if (element.getAttribute(attr) !== next) element.setAttribute(attr, next);
+    });
     const select = document.getElementById('languageSelect');
     if (select) select.value = locale;
     try { localStorage.setItem('portfolio-language', locale); } catch { /* Storage may be unavailable. */ }
-    document.dispatchEvent(new Event('portfolio-language-change'));
+    if (changed) document.dispatchEvent(new Event('portfolio-language-change'));
   }
   window.portfolioI18n = {t, interpolate, get locale() { return locale; }, setLocale};
   document.addEventListener('DOMContentLoaded', () => {
     const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
     while (walker.nextNode()) {
       const node = walker.currentNode;
-      if (!node.parentElement.closest('script, style, [data-no-translate]') && dictionary[normalize(node.textContent)]) textEntries.push([node,node.textContent]);
+      if (dictionary[normalize(node.nodeValue)] && !node.parentElement.closest('script, style, [data-no-translate]')) textEntries.push([node,node.nodeValue]);
     }
     const title = document.querySelector('title')?.firstChild;
     if (title) textEntries.push([title,title.textContent]);
