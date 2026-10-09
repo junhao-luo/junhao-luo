@@ -49,4 +49,4 @@ Based in **Taichung, Taiwan** · Pronouns: **he/him**
 
 The contact form and footer email field send requests to a Cloudflare Worker, which delivers notifications through Resend to `eljhonstevesatsat@gmail.com`. The frontend never contains the Resend API key.
 
-See [email-worker/README.md](email-worker/README.md) for domain verification, deployment and local tests. Set the `contact-endpoint` meta tag in `index.html` to the deployed Worker URL ending in `/api/contact` before publishing the frontend. Until the Worker is activated, failed requests show an error and retain the entered details.
+The `contact-endpoint` meta tag in `index.html` points to the deployed Worker. Resend domain verification is required before email delivery works; failed requests show an error and retain the entered details. Deployment instructions and automated checks are kept in the local checkout rather than published in this repository.

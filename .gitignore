@@ -48,3 +48,10 @@ playwright-report/
 motion-audits/
 live_captures/
 glass-captures/
+
+# Local development tools, previews, and setup notes
+/tests/
+/ai_orb.html
+/avatar.png
+/generate_sitemap.py
+/email-worker/README.md
