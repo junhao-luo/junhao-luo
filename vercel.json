@@ -6,6 +6,10 @@
       "destination": "https://project-t46co.vercel.app/student-dashboard/"
     },
     {
+      "source": "/student-dashboard/",
+      "destination": "https://project-t46co.vercel.app/student-dashboard/"
+    },
+    {
       "source": "/student-dashboard/:path*",
       "destination": "https://project-t46co.vercel.app/student-dashboard/:path*"
     }
