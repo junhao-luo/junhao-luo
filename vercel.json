@@ -2,6 +2,18 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "rewrites": [
     {
+      "source": "/python-practice",
+      "destination": "https://python-practice-chi.vercel.app/python-practice"
+    },
+    {
+      "source": "/python-practice/",
+      "destination": "https://python-practice-chi.vercel.app/python-practice"
+    },
+    {
+      "source": "/python-practice/:path*",
+      "destination": "https://python-practice-chi.vercel.app/python-practice/:path*"
+    },
+    {
       "source": "/student-dashboard",
       "destination": "https://project-t46co.vercel.app/student-dashboard/"
     },
