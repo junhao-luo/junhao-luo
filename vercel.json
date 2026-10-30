@@ -2,6 +2,14 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "rewrites": [
     {
+      "source": "/cs-review",
+      "destination": "https://cs-review-six.vercel.app/cs-review"
+    },
+    {
+      "source": "/cs-review/:path*",
+      "destination": "https://cs-review-six.vercel.app/cs-review/:path*"
+    },
+    {
       "source": "/python-practice",
       "destination": "https://python-practice-chi.vercel.app/python-practice"
     },
